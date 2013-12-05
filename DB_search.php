@@ -32,10 +32,10 @@ $search = $_POST["search"];
 // Alternativ 1: Sök på SetID
 
 $query = "
-(SELECT parts.PartID, parts.Partname
-FROM 
+(SELECT sets.setname
+FROM sets
 WHERE sets.SetID = '$search')";
-
+/*
 // Alternativ 2: Sök på CategoryID
 
 $query = "
@@ -63,7 +63,7 @@ $query = "
 (SELECT categories.Categoryname, 
 FROM s, p
 WHERE 1)";
-
+*/
 
 
 $contents = mysql_query("$query");
