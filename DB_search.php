@@ -32,7 +32,7 @@ $search = $_POST["search"];
 // Alternativ 1: Sök på SetID
 
 $query = "
-(SELECT sets.setname
+(SELECT sets.Setname, sets.SetID
 FROM sets
 WHERE sets.SetID = '$search')";
 /*
