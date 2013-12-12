@@ -9,21 +9,22 @@
 
 <body>
 
-<!-- Fixa en lista med alternativen för vad man ska söka-->
+<!--en lista med alternativen för vad man ska söka-->
 <form id="wizard" action="" method="post">
 <p class ="input"><label>
 Search: &nbsp;
 <br>
 <select name="alternativ">
-  <option value="SetID">SetID</option>
-  <option value="Setname">Setname</option>
-  <option value="Year">Year</option>
-  <option value="Categoryname">Categoryname</option>
+<option value="SetID">SetID</option>
+<option value="Setname">Setname</option>
+<option value="Year">Year</option>
+<option value="Categoryname">Categoryname</option>
 </select>
-<br>
-<input type ="text" name ="search" size ="10">
 </label></p>
 
+<!--sökfält-->
+<input type ="text" name ="search" size ="20"/>
+<br/>
 <input type = "submit" value = "Find lego!"/>
 <input type = "reset" value = "Clear"/>
 </form>
@@ -57,9 +58,9 @@ $query = "
 (SELECT sets.Setname, sets.SetID, sets.Year
 FROM sets
 WHERE sets.CatID IN
-						(SELECT categories.CatID
-						FROM categories
-						WHERE categories.Categoryname = '$search'))";
+                                                (SELECT categories.CatID
+                                                FROM categories
+                                                WHERE categories.Categoryname = '$search'))";
 }
 
 
@@ -94,6 +95,7 @@ for($i = 0; $i < mysql_num_fields($contents); $i++)
                 $fieldname = mysql_field_name($contents, $i);
                         print("<th>$fieldname</th>");
 }
+ print("<th>Image</th>");
 print("</tr>\n");
 
 while($row = mysql_fetch_row($contents))
@@ -103,26 +105,27 @@ for($i = 0;$i < mysql_num_fields($contents); $i++)
 {
 print("<td>$row[$i]</td>");
 }
-/*
-   $img_dir = "http://webstaff.itn.liu.se/~stegu76/img.bricklink.com/";
-   $gif_url = $img_dir . "S/" . '$row[1]' . ".gif";
-   $jpg_url = $img_dir . "S/" . '$row[1]' . ".jpg";
 
-   if (fclose(fopen($gif_url, "r")))
-   {
-      print("<p>" . "gif-bild" . "</p>");
-      print("<p><img src='$gif_url' alt='gif-image' /></p>");
-   }
-   else if (fclose(fopen($jpg_url, "r")))
-   {
-      print("<p>" . "jpg-bild" . "</p>"); 
-      print("<p><img src='$jpg_url' alt='jpg-image' /></p>");
-   }
-   else
-   {
-      print("<p>" . "bild saknas" . "</p>"); 
-   }
-*/
+$img_dir = "http://webstaff.itn.liu.se/~stegu76/img.bricklink.com/";
+$gif_url = $img_dir . 'S/' . $row[1] . '.gif';  //'$row[1]'
+$jpg_url = $img_dir . 'S/' . $row[1] . '.jpg';
+
+if(@fclose(@fopen($gif_url, "r"))){
+//print("<td>" . "" . "</td>");
+
+print("<td> <img src='$gif_url' alt='gif-image' /></td>");
+
+}
+else if(@fclose(@fopen($jpg_url, "r"))){
+//print("<p>" . "jpg-bild" . "</p>");
+print("<td><img src='$jpg_url' alt='jpg-image' /></td>");
+}
+else{
+print("<td>" . "bild saknas" . "</td>");
+}
+
+
+
 print("</tr>\n");
 }
 print("</table>\n");
