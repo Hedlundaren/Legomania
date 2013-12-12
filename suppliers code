@@ -1,0 +1,6 @@
+<?php
+
+
+var_dump($_GET);
+$setID = $_GET["setID"];
+var_dump($setID);
