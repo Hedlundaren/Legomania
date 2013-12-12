@@ -171,6 +171,6 @@ mysql_close($connection);
 </footer>
 
 <script type="text/javascript" src="jquery-1.10.2.js"></script>
-<script type="text/javascript" src="validate.js"></script>
+<script type="text/javascript" src="magic.js"></script>
 </body>
 </html>
