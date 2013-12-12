@@ -1,0 +1,143 @@
+body
+{
+background-color: gray;
+padding: 0px;
+margin: 0px;
+}
+
+#background
+{
+z-index: -1; 
+height: 100%;
+width: 100%;
+top: 0px;
+position: fixed;
+}
+
+header
+{
+top:0px;
+z-index:1;
+height: 240px;
+background:#d6d6d6;
+opacity:0.9;
+  border:0px solid black;
+  margin:0px;
+  position: fixed;
+  width:100%;
+
+  
+}
+
+
+.opacitybox
+{
+z-index: 0;
+
+  margin:0px;
+  padding:0px;
+  background:#d6d6d6;
+  opacity:0.9; 
+  border:0px solid #d6d6d6;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0;
+margin-left: auto;
+text-align: center;
+
+
+  height: 100%;
+  width: 60%;
+
+}
+
+#wizard
+{
+z-index: 0;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0;
+margin-left: 50px;
+text-align: center;
+position: fixed;
+}
+
+#forum
+{
+font-size: 40px;
+padding-top: 50px;;
+padding-left: 80%; 
+}
+
+select
+{
+    width: 400px;
+	font-size: 30px;
+	color:#727272;
+	border-radius: 15px;
+	margin: 0px;
+}
+
+input[type=text]
+{
+    background-color: #FFGFGF;
+    border:solid 10px #BFBDBD;
+	border-color: white;
+    color: #979797;
+    height: 50px;
+    padding-left:10px;
+    width: 400px;
+	
+	font-size: 30px;
+	font-style:Times New Roman;
+	border-radius: 25px;
+}
+
+
+
+input[type=submit]
+{
+    width: 100px;
+	height: 50px;
+	text-size: 24px;
+		margin: 15px;
+}
+
+input[type=reset]
+{
+    width: 100px;
+	height: 50px;
+	margin: 15px;
+	
+}
+
+table
+{
+width: 100%;
+color: #474747;
+border=border;
+margin-top: 240px;
+
+}
+
+th
+{
+font-size: 30px;
+font-style: Verdana;
+background: #b0ff8e;
+height: 60px;
+}
+
+td
+{
+background-image: url('piggelin.png');
+height: 60px;
+font-size: 22px;
+font-style: Verdana;
+}
+
+footer
+{
+ehej
+}
+
