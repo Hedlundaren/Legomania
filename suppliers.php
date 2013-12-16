@@ -13,7 +13,6 @@ $setID = $_GET["setID"];
 
 
 // Visa alla delar i valt set 
-//Varför visar den dubletter ibland?
 
 $query = "
 (SELECT DISTINCT parts.partname, parts.PartID, inventory.Quantity, colors.Colorname, colors.ColorID
