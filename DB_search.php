@@ -150,13 +150,13 @@ print("<td class='pictureColumn'><a href='$gif_url'> <img src='$gif_url' alt='gi
 
 }
 else if(@fclose(@fopen($jpg_url, "r"))){
-//print("<p>" . "jpg-bild" . "</p>");
+
 print("<td class='pictureColumn'><a href='$jpg_url'><img src='$jpg_url' alt='jpg-image' /></a></td>");
 }
 else{
 print("<td class='pictureColumn'>" . "bild saknas" . "</td>");
 }
-//}
+
 
 print("</tr>\n");
 }
