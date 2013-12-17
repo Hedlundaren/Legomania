@@ -69,6 +69,8 @@ return true;
 
 <?php
         $connection = mysql_connect ("mysql.itn.liu.se", "lego", "")
+                //Om databas lokalt nerladdad,
+                        //$connection = mysql_connect ("localhost", "lego", "")
                 or die ("Connection failed!");
         
         mysql_select_db ("lego");
