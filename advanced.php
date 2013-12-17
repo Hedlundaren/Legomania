@@ -18,38 +18,51 @@ if($_POST)
 	$catID = $_POST["catID"];
 	$year = $_POST["year"];
 	$partID = $_POST["partID"];
-
-	if ($setname == ""){
-		$setname = "*";
-	}
-	
-	if ($setID == ""){
-		$setID = "*";
-	}
-	if ($categoryname == ""){
-		$categoryname = "*";
-	}
-	if ($catID == ""){
-		$catID = "*";
-	}
-	if ($year == ""){
-		$year = "*";
-	}
-	if ($partID == ""){
-		$partID = "*";
-	}
-	
+		/* ---Går inte------------------------------
+        	$query = "(
+                SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
+                FROM sets
+                WHERE sets.SetID = '$setID'
+                        AND sets.Setname = '$setname'
+                        AND sets.CatID = '$catID'
+                        AND sets.Year = '$year'
+                        AND categories.Categoryname = '$categoryname'
+                        AND parts.PartID = '$partID')";
+		   ---Går inte------------------------------*/
+		
+		
+	/*
+	Idé:
 	$query = "(
-		SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
-		FROM sets
-		WHERE sets.SetID = '$setID'
-			AND sets.Setname = '$setname'
-			AND sets.CatID = '$catID'
-			AND sets.Year = '$year'
-			AND categories.Categoryname = '$categoryname'
-			AND parts.PartID = '$partID')";
-	
-	
+        SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
+        FROM sets
+        WHERE sets.SetID = '$setID'
+	*/
+	//Frågan byggs på med varje if-sats
+	//if first-funktion visar false, lägg till AND innan
+        if ($setname == ""){
+        	//$query = $query . 'AND sets.Setname = "*"'
+				$setname = "*";
+        }
+        
+        if ($setID == ""){
+                $setID = "*";
+        }
+        if ($categoryname == ""){
+                $categoryname = "*";
+        }
+        if ($catID == ""){
+                $catID = "*";
+        }
+        if ($year == ""){
+                $year = "*";
+        }
+        if ($partID == ""){
+                $partID = "*";
+        }
+        
+
+        
 	$contents = mysql_query("$query");
 
 //Utskrift
