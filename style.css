@@ -1,17 +1,39 @@
 body
 {
-background-color: gray;
+background: gray;
 padding: 0px;
 margin: 0px;
+
+}
+
+a {text-decoration:none;
+color: #939393;
+
+}
+a:hover {text-decoration:none;
+color: white;
+
+}
+
+p
+{
+font-size: 14px;
 }
 
 #background
 {
-z-index: -1; 
+z-index: -1;
 height: 100%;
 width: 100%;
 top: 0px;
 position: fixed;
+background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+}
+
+#fade
+{
+position: absolute;
+z-index: 0;
 }
 
 header
@@ -19,35 +41,13 @@ header
 top:0px;
 z-index:1;
 /*height: 240px;*/
-background:#d6d6d6;
-opacity:0.9;
+opacity:1;
   border:0px solid black;
   margin:0px;
   position: fixed;
   width:100%;
 
-  
-}
-
-
-.opacitybox
-{
-z-index: 0;
-
-  margin:0px;
-  padding:0px;
-  background:#d6d6d6;
-  opacity:0.9; 
-  border:0px solid #d6d6d6;
-margin-top: 0px;
-margin-right: auto;
-margin-bottom: 0;
-margin-left: auto;
-text-align: center;
-
-
-  height: 100%;
-  width: 60%;
+  height: 25%;
 
 }
 
@@ -57,66 +57,137 @@ z-index: 0;
 margin-top: 0px;
 margin-right: auto;
 margin-bottom: 0;
-margin-left: 50px;
 text-align: center;
 position: fixed;
+width:100%;
+
 }
+
+
+.opacitybox
+{
+z-index: 0;
+
+  margin:0px;
+  padding:0px;
+
+  opacity:0.8;
+  border:0px solid #d6d6d6;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0;
+margin-left: auto;
+text-align: center;
+
+
+  height: 100%;
+  width: 50%;
+
+}
+
 
 #forum
 {
+background: url('forumbutton12.png');
 font-size: 40px;
-padding-top: 50px;;
-padding-left: 80%; 
+top: 15%;
+right: 10%;
+position: absolute;
+z-index: 1;
+opacity: 0.7;
 }
+
+#forum:hover, #forum:active
+{
+background: url('forumbutton12.png');
+opacity: 1;
+z-index: 1;
+}
+
+#home
+{
+font-size: 40px;
+top: 15%;
+left: 10%;
+position: absolute;
+z-index: 1;
+opacity: 0.7;
+size: 110%;
+
+}
+
+#home:hover, #home:active
+{
+background: url('homebutton.png');
+opacity: 1;
+z-index: 1;
+}
+
 
 select
 {
-    width: 400px;
-	font-size: 30px;
-	color:#727272;
-	border-radius: 15px;
-	margin: 0px;
+    width: 250px;
+	height: 40px;
+        font-size: 25px;
+        color:#727272;
+        border-radius: 15px;
+        margin: 0px;
+		text-align: center;
+		 opacity:0.9;
+		 border:solid 1px black;
+
 }
 
 input[type=text]
 {
     background-color: #FFGFGF;
     border:solid 10px #BFBDBD;
-	border-color: white;
+        border-color: white;
     color: #979797;
-    height: 50px;
+    height: 40px;
     padding-left:10px;
-    width: 400px;
-	
-	font-size: 30px;
-	font-style:Times New Roman;
-	border-radius: 25px;
+    width: 300px;
+        
+        font-size: 28px;
+        font-style:Arial Black;
+        border-radius: 25px;
+		text-align: center;
+		  opacity:0.9;
+		  border:solid 1px black;
 }
 
 
 
 input[type=submit]
 {
-    width: 100px;
-	height: 50px;
-	text-size: 24px;
-		margin: 15px;
+    width: 90px;
+        height: 40px;
+        text-size: 24px;
+                margin: 15px;
+					font-size: 25px;
 }
 
 input[type=reset]
 {
-    width: 100px;
-	height: 50px;
-	margin: 15px;
-	
+    width: 90px;
+        height: 40px;
+        margin: 15px;
+		font-size: 25px;
+        
+}
+input[type=checkbox]
+{
+
 }
 
 table
 {
 width: 100%;
-color: #474747;
-border=border;
-margin-top: 240px;
+color: #939393;
+margin-top: 28%;
+background: black;
+z-index: -1;
+border: solid 0px black;
 
 }
 
@@ -124,20 +195,35 @@ th
 {
 font-size: 30px;
 font-style: Verdana;
-background: #b0ff8e;
+background: #3d3d3d;
 height: 60px;
 }
 
 td
 {
-background-image: url('piggelin.png');
+background: black;
 height: 60px;
 font-size: 22px;
 font-style: Verdana;
 }
 
+td:hover
+{
+background-color:#bc6100;
+color: black; 
+} 
+
 footer
 {
-ehej
-}
+bottom:0px;
+z-index:1;
+/*height: 240px;*/
+background: black;
 
+opacity:0.5;
+  border:0px solid black;
+  margin:0px;
+  position: fixed;
+  width:100%;
+  height: 5%;
+}
