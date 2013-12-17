@@ -2,7 +2,8 @@
 include "header.php";
 
 
-	//Fråga Lithehack!
+	//Fråga -- set of the day, slumpat SetID förnyad med datum
+	//exempel github @tistatos
 $query = ("
 	SELECT sets.SetID
 	FROM sets
