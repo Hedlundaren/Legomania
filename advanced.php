@@ -34,7 +34,8 @@ if($_POST)
 		
 	/* Idé: */
 	$query = "(SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
-        FROM sets ";
+        FROM sets 
+		WHERE 1 ";
 		//WHERE sets.SetID = '$setID'" tog ut
 	
 	//Frågan byggs på med varje if-sats
@@ -59,51 +60,47 @@ if($_POST)
 		
 		//SetId
 		if ($SetID!=""){
-			$query = $query . " WHERE sets.SetID = '" . $SetID . "'";
+			$query = $query . "AND sets.SetID = '" . $SetID . "'";
         }
-		elseif($SetID == ""){
-			$query = $query . " WHERE sets.SetID = * ";
-		}
-		
+
+
 		//Setname
 		if ($Setname!=""){
-			$query = $query . " AND sets.Setname = '" . $Setname . "'";
+			$query = $query . " AND sets.Setname LIKE '%" . $Setname . "%'";
         }
-		elseif($Setname == ""){
-			$query = $query . " AND sets.Setname = * ";
-		}
+
         
 		//Catogoryname
         if ($Categoryname!=""){
-            $query = $query . " AND categories.Categoryname = '" . $Categoryname . "'";
+            $query = $query . " AND sets.CatID IN
+                                        (SELECT categories.CatID
+                                         FROM categories
+                                         WHERE categories.Categoryname LIKE '%" . $Categoryname . "%')";
+										 
+
         }
-		elseif ($Categoryname == ""){
-            $query = $query . " AND categories.Categoryname = * ";
-        }
+
 		
 		//CatID
         if ($CatID!=""){
             $query = $query . " AND sets.CatID = '" . $CatID . "'";
         }
-		elseif ($CatID == ""){
-            $query = $query . " AND sets.CatID = * ";
-        }
+
 		
 		//Year
         if ($Year!=""){
             $query = $query . " AND sets.Year = '" . $Year . "'";
         }
-		elseif ($Year == ""){
-            $query = $query . " AND sets.Year = * ";
-        }
-		
+
+	
 		//PartID
         if ($PartID!=""){
-            $query = $query . " AND parts.PartID = '" . $PartID . "'";
+            $query = $query . " AND sets.SetID IN 
+										(SELECT inventory.SetID
+                                         FROM inventory
+                                         WHERE inventory.ItemID = '" . $PartID . "')";
         }
-		elseif ($PartID == ""){
-            $query = $query . " AND parts.PartID = *";
-        }
+
 		
 	$query = $query . ')';
 	
@@ -124,7 +121,7 @@ if($_POST)
 
 	while($row = mysql_fetch_row($contents)){
 		print("<tr>");
-			print("<td><a href='suppliers.php?setID=$row[1]'>$row[0]</a></td>");
+			print("<td><a href='setinfo.php?setID=$row[1]'>$row[0]</a></td>");
 			
 			for($i = 1;$i < mysql_num_fields($contents); $i++){
 				print("<td>$row[$i]</td>");
