@@ -17,7 +17,12 @@ $query = ("
 
 $contents = mysql_query("$query");
 //$row = mysql_fetch_field($contents);
-	
+/*
+if (numOfResults($contents) == 0){
+	echo("<h1>No results.</h1>");
+}
+else{
+*/
 	while($row = mysql_fetch_row($contents)){			
 			for($i = 0;$i < mysql_num_fields($contents); $i++){
 				print("<p>$row[$i]</p>");
@@ -43,5 +48,6 @@ print ("</tr></table>");
 
 			}
 	}
-
+	
+//} till else-satsen där uppe
 include "footer.php";
