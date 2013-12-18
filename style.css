@@ -27,7 +27,7 @@ height: 100%;
 width: 100%;
 top: 0px;
 position: fixed;
-background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+
 }
 
 #fade
@@ -99,7 +99,7 @@ opacity: 0.7;
 
 #forum:hover, #forum:active
 {
-background: url('forumbutton12.png');
+/* background: url('forumbutton12.png'); */
 opacity: 1;
 z-index: 1;
 }
@@ -118,7 +118,7 @@ size: 110%;
 
 #home:hover, #home:active
 {
-background: url('homebutton.png');
+/* background: url('homebutton.png'); */
 opacity: 1;
 z-index: 1;
 }
@@ -202,12 +202,16 @@ height: 60px;
 td
 {
 background: black;
-height: 60px;
 font-size: 22px;
 font-style: Verdana;
 }
 
-td:hover
+td a {
+display: block;
+height: 60px;
+}
+
+td a:hover
 {
 background-color:#bc6100;
 color: black; 
