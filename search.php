@@ -8,45 +8,54 @@ if($_POST)
         $value = $_POST ["alternativ"];
         $search = $_POST["search"];
 
+		/*---paging2---*/
+		if (isset($_GET["page"])){
+			$page  = $_GET["page"];
+		}
+		else{
+			$page=1;
+		};
+		$start_from = ($page-1) * 20; 
+		
+		//början query-stringen
+		$query = "(SELECT sets.Setname, sets.SetID, sets.Year
+                  FROM sets ";
+		
         // Alternativ 1: Sök på SetID
         if ($value == "SetID"){
-                $query = "
-                        (SELECT sets.Setname, sets.SetID, sets.Year
-                        FROM sets
-                        WHERE sets.SetID LIKE '%$search%')";
+			$query = $query . "WHERE sets.SetID LIKE '%$search%'";
         }
         
         // Alternativ 2: Sök på Categoryname
         if ($value == "Categoryname"){
-                $query = "
-                        (SELECT sets.Setname, sets.SetID, sets.Year
-                        FROM sets
-                        WHERE sets.CatID IN
+			$query = $query . "WHERE sets.CatID IN
                                         (SELECT categories.CatID
                                          FROM categories
-                                         WHERE categories.Categoryname LIKE '%$search%'))";
+                                         WHERE categories.Categoryname LIKE '%$search%')";
         }
-
 
         // Alternativ 3: Sök på Setname
         if ($value == "Setname"){
-                $query = "
-                        (SELECT sets.Setname, sets.SetID, sets.Year
-                        FROM sets
-                        WHERE sets.setname LIKE '%$search%')";
+			$query = $query . "WHERE sets.setname LIKE '%$search%'";
         }
 
         // Alternativ 4: Sök på SetYear
         if ($value == "Year"){
-                $query = "
-                        (SELECT sets.Setname, sets.SetID, sets.Year
-                        FROM sets
-                        WHERE sets.Year = '$search')";
+                $query = $query . "WHERE sets.Year = '$search'";
         }
 
+		//avslutan på query-stringen
+		$query = $query . " LIMIT $start_from, 20)";
+		
         $contents = mysql_query("$query");
-
-
+		
+		//om inga resultat hittas
+		//br-taggar temporär lösning
+		if(mysql_num_rows($contents) == 0){
+			echo("<table><td><h1>No results.</h1></td></table>");
+		}
+		else{
+		
         print("<table border='border' cellpadding='6' cellspacing='3'>\n");
                 print("<tr>");
 
@@ -58,6 +67,7 @@ if($_POST)
 
                 print("</tr>\n");
 
+		//utskrift
         while($row = mysql_fetch_row($contents)){
                 print("<tr>");
                         print("<td><a href='setinfo.php?setID=$row[1]'>$row[0]</a></td>");
@@ -109,9 +119,60 @@ if($_POST)
                 print("</tr>\n");
         }
         print("</table>\n");
+		
+		/***paging2***/
+		//början query-stringen
+		$query = "(SELECT COUNT(sets.Setname), sets.SetID, sets.Year
+                  FROM sets ";
+		
+        // Alternativ 1: Sök på SetID
+        if ($value == "SetID"){
+			$query = $query . "WHERE sets.SetID LIKE '%$search%')";
+        }
+        
+        // Alternativ 2: Sök på Categoryname
+        if ($value == "Categoryname"){
+			$query = $query . "WHERE sets.CatID IN
+                                        (SELECT categories.CatID
+                                         FROM categories
+                                         WHERE categories.Categoryname LIKE '%$search%'))";
+        }
 
+        // Alternativ 3: Sök på Setname
+        if ($value == "Setname"){
+			$query = $query . "WHERE sets.setname LIKE '%$search%')";
+        }
 
-        mysql_close($connection);
+        // Alternativ 4: Sök på SetYear
+        if ($value == "Year"){
+                $query = $query . "WHERE sets.Year = '$search')";
+        }
+		
+		//$nySQL = "(SELECT COUNT(sets.Setname) FROM sets)";
+		$rs_result = mysql_query($query);
+		$row = mysql_fetch_row($rs_result);
+		$total_records = $row[0];
+		$total_pages = ceil($total_records/20);
+
+		for ($i = 1; $i <= $total_pages; $i++) {
+			echo"<a href='search.php?page=".$i."'>".$i."</a> ";
+		}
+		
+		/**paging**********
+		echo("<p>");
+        echo("Pages: ");
+        $NumberOfPages = ceil((mysql_num_rows($contents))/20);
+        for($i =0; $i < $NumberOfPages; $i++)
+        {
+                //print a number with a link to the javascript function that creates the paging
+                echo("<a onclick='javascript:scrollResult($i);' href='#result'>" . ($i+1) . " &nbsp;</a>");
+        }
+        echo("</p>");
+		**paging***********/
+		
+		} //else-satsen
+        
+		mysql_close($connection);
 }
 
 include "footer.php";
