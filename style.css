@@ -1,8 +1,10 @@
 body
 {
-background: gray;
+min-width: 100%;
+min-height: 100%;
 padding: 0px;
 margin: 0px;
+
 
 }
 
@@ -27,8 +29,18 @@ height: 100%;
 width: 100%;
 top: 0px;
 position: fixed;
+margin: 0px;
+min-width: 1910px;
+min-height: 1060px;
 
 }
+
+#headerpic
+{
+min-width: 1000px;
+
+}
+
 
 #fade
 {
@@ -60,6 +72,7 @@ margin-bottom: 0;
 text-align: center;
 position: fixed;
 width:100%;
+min-width: 1000px;
 
 }
 
@@ -84,6 +97,16 @@ text-align: center;
   width: 50%;
 
 }
+
+.litentext {
+    font-size: 18px ;
+    color: solid black;
+    text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
+	text-align: center;
+	position: relative;
+	
+}
+
 
 
 #forum
@@ -126,9 +149,9 @@ z-index: 1;
 
 select
 {
-    width: 250px;
-	height: 40px;
-        font-size: 25px;
+    width: 150px;
+	height: 30px;
+        font-size: 20px;
         color:#727272;
         border-radius: 15px;
         margin: 0px;
@@ -144,11 +167,12 @@ input[type=text]
     border:solid 10px #BFBDBD;
         border-color: white;
     color: #979797;
-    height: 40px;
+    height: 30px;
     padding-left:10px;
-    width: 300px;
+	margin-top: 0px;
+    width: 250px;
         
-        font-size: 28px;
+        font-size: 20px;
         font-style:Arial Black;
         border-radius: 25px;
 		text-align: center;
@@ -160,19 +184,19 @@ input[type=text]
 
 input[type=submit]
 {
-    width: 90px;
-        height: 40px;
-        text-size: 24px;
-                margin: 15px;
-					font-size: 25px;
+    width: 70px;
+        height: 30px;
+        
+                margin: 10px;
+					font-size: 20px;
 }
 
 input[type=reset]
 {
-    width: 90px;
-        height: 40px;
-        margin: 15px;
-		font-size: 25px;
+    width: 70px;
+        height: 30px;
+        margin: 10px;
+		font-size: 20px;
         
 }
 input[type=checkbox]
@@ -182,9 +206,11 @@ input[type=checkbox]
 
 table
 {
+min-width: 1000px;
 width: 100%;
 color: #939393;
-margin-top: 28%;
+margin-top: 300px;
+
 background: black;
 z-index: -1;
 border: solid 0px black;
