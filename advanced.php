@@ -1,6 +1,6 @@
 <?php
 
-include "header2.php";
+include "header advanced.php";
 
 	//Fråga
 
@@ -12,13 +12,14 @@ include "header2.php";
 
 if($_POST)
 {
-	$setname = $_POST ["setname"];
-	$setID = $_POST["setID"];
-	$categoryname = $_POST["categoryname"];
-	$catID = $_POST["catID"];
-	$year = $_POST["year"];
-	$partID = $_POST["partID"];
-		/* ---Går inte------------------------------
+	$Setname = $_POST ["Setname"];
+	$SetID = $_POST["SetID"];
+	$Categoryname = $_POST["Categoryname"];
+	$CatID = $_POST["CatID"];
+	$Year = $_POST["Year"];
+	$PartID = $_POST["PartID"];
+	
+		/* ---Förra------------------------------
         	$query = "(
                 SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
                 FROM sets
@@ -28,42 +29,86 @@ if($_POST)
                         AND sets.Year = '$year'
                         AND categories.Categoryname = '$categoryname'
                         AND parts.PartID = '$partID')";
-		   ---Går inte------------------------------*/
+		   ---Förra------------------------------*/
 		
 		
-	/*
-	Idé:
-	$query = "(
-        SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
-        FROM sets
-        WHERE sets.SetID = '$setID'
-	*/
+	/* Idé: */
+	$query = "(SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
+        FROM sets ";
+		//WHERE sets.SetID = '$setID'" tog ut
+	
 	//Frågan byggs på med varje if-sats
-	//if first-funktion visar false, lägg till AND innan
-        if ($setname == ""){
-        	//$query = $query . 'AND sets.Setname = "*"'
-				$setname = "*";
-        }
+	//om first-funktion visar false, lägg till AND innan 'inte klart'
         
-        if ($setID == ""){
-                $setID = "*";
+		/*----funktionstest----
+		function extendQuery($x){
+			if (!$x == ""){
+				$query = $query . "AND sets.$x = '$x'";
+			}
+			elseif($x == ""){
+				$query = $query . "AND sets.$x = '*'";
+			}
+		} */
+		/*----från labb5----
+		$query = "SELECT * FROM p WHERE 1";
+		foreach ($_POST as $name => $value) {
+			if($value!='')
+				$query = $query . " AND " . $name . " = '" . $value . "'";  
+}
+		*/
+		
+		//SetId
+		if ($SetID!=""){
+			$query = $query . " WHERE sets.SetID = '" . $SetID . "'";
         }
-        if ($categoryname == ""){
-                $categoryname = "*";
+		elseif($SetID == ""){
+			$query = $query . " WHERE sets.SetID = * ";
+		}
+		
+		//Setname
+		if ($Setname!=""){
+			$query = $query . " AND sets.Setname = '" . $Setname . "'";
         }
-        if ($catID == ""){
-                $catID = "*";
-        }
-        if ($year == ""){
-                $year = "*";
-        }
-        if ($partID == ""){
-                $partID = "*";
-        }
+		elseif($Setname == ""){
+			$query = $query . " AND sets.Setname = * ";
+		}
         
-
-        
-	$contents = mysql_query("$query");
+		//Catogoryname
+        if ($Categoryname!=""){
+            $query = $query . " AND categories.Categoryname = '" . $Categoryname . "'";
+        }
+		elseif ($Categoryname == ""){
+            $query = $query . " AND categories.Categoryname = * ";
+        }
+		
+		//CatID
+        if ($CatID!=""){
+            $query = $query . " AND sets.CatID = '" . $CatID . "'";
+        }
+		elseif ($CatID == ""){
+            $query = $query . " AND sets.CatID = * ";
+        }
+		
+		//Year
+        if ($Year!=""){
+            $query = $query . " AND sets.Year = '" . $Year . "'";
+        }
+		elseif ($Year == ""){
+            $query = $query . " AND sets.Year = * ";
+        }
+		
+		//PartID
+        if ($PartID!=""){
+            $query = $query . " AND parts.PartID = '" . $PartID . "'";
+        }
+		elseif ($PartID == ""){
+            $query = $query . " AND parts.PartID = *";
+        }
+		
+	$query = $query . ')';
+	
+	print($query);    
+	$contents = mysql_query($query) or trigger_error(mysql_error().$contents);
 
 //Utskrift
 	print("<table border='border' cellpadding='6' cellspacing='3'>\n");
