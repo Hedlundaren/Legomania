@@ -1,9 +1,9 @@
 <?php print ("<!DOCTYPE html>");?>
 <html>
 <head>
-        <meta charset="utf-8">
-        <title>Legomania</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="utf-8">
+<title>Legomania</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -12,34 +12,36 @@
 <header>
 
 <div id="fade">
-<img src="bakgrundopacity.png">
+<img id="headerpic" src="bakgrundopacity.png">
 </div>
 
+
+<form id ="wizard" name="wizard" action="search.php" method="post" onsubmit="return validate()">
 <a id="home" href="https://www.facebook.com/">
 <img src="homebutton.png"> </a>
 
-<a id="forum" href="http://www.youtube.com/watch?v=uOj5CX6X4Gs"><img src="forumbutton12.png"></a>
+<a id="forum" href="http://www.sermon.se/legoforum"><img src="forumbutton12.png"></a>
 
-<form id ="wizard" name="wizard" action="search.php" method="post" onsubmit="return validate()">
-        <p id="input"><label>
-        Search sets by: &nbsp;
-        <br>
-        <select name="alternativ">
-                <option value="SetID">SetID</option>
-                <option value="Setname">Setname</option>
-                <option value="Year">Year</option>
-                <option value="Categoryname">Categoryname</option>
-                </select>
-                </label></p>
+<label>
+<div class="litentext">Search sets by: &nbsp;
+</div>
+<select name="alternativ">
+<option value="SetID">SetID</option>
+<option value="Setname">Setname</option>
+<option value="Year">Year</option>
+<option value="Categoryname">Categoryname</option>
+</select>
+</label>
 
 <!--sökfält-->
-        <p id="input2">
-        <input type ="text" name ="search" placeholder = "Enter input!" size ="20"/>
-        <br/>
-        <input type = "submit" value = "Find"/>
-        <input type = "reset" value = "Clear"/>
-        Show images: <input type = "checkbox" name = "image" value = "Show">
-        </p>
+<p id="input2">
+<input type ="text" name ="search" placeholder = "Enter input!" size ="20"/>
+<br/>
+<input type = "submit" value = "Find"/>
+<input type = "reset" value = "Clear"/>
+<div class="litentext">Show images: <input type = "checkbox" name = "image" value = "Show">
+</div>
+</p>
 </form>
 
 <p><a href = "advance.php"> Advance search </a></p>
