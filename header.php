@@ -16,7 +16,7 @@
 </div>
 
 
-<form id ="wizard" name="wizard" action="search.php" method="post" onsubmit="return validate()">
+<form id ="wizard" name="wizard" action="search.php" method="get" onsubmit="return validate()">
 <a id="home" href="https://www.facebook.com/">
 <img src="homebutton.png"> </a>
 
@@ -44,7 +44,7 @@
 </p>
 </form>
 
-<p><a href = "advance.php"> Advance search </a></p>
+<!--<a href="advanced.php">Advanced search</a>-->
 <!--
 <div id="forum">
 <a href="http://facebook.com/">Forum</a>
