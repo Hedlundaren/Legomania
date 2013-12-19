@@ -5,7 +5,6 @@ min-height: 100%;
 padding: 0px;
 margin: 0px;
 
-
 }
 
 a {text-decoration:none;
@@ -17,22 +16,23 @@ color: white;
 
 }
 
-p
+#advanced
 {
 font-size: 14px;
+z-index: 2;
 }
 
 #background
 {
+position: fixed;
 z-index: -1;
+
 height: 100%;
 width: 100%;
-top: 0px;
-position: fixed;
-margin: 0px;
 min-width: 1910px;
 min-height: 1060px;
-
+margin: 0px;
+top: 0px;
 }
 
 #headerpic
@@ -40,7 +40,6 @@ min-height: 1060px;
 min-width: 1000px;
 
 }
-
 
 #fade
 {
@@ -50,98 +49,97 @@ z-index: 0;
 
 header
 {
-top:0px;
 z-index:1;
-/*height: 240px;*/
+position: fixed;
+	
+width:100%;
+height: 25%;	
+margin:0px;
+top:0px;
+	
 opacity:1;
-  border:0px solid black;
-  margin:0px;
-  position: fixed;
-  width:100%;
-
-  height: 25%;
-
 }
 
 #wizard
 {
+
 z-index: 0;
+position: fixed;
+
+width:100%;
+min-width: 1000px;
 margin-top: 0px;
 margin-right: auto;
 margin-bottom: 0;
-text-align: center;
-position: fixed;
-width:100%;
-min-width: 1000px;
 
+text-align: center;
 }
 
 
 .opacitybox
 {
 z-index: 0;
+	
+padding:0px;
 
-  margin:0px;
-  padding:0px;
-
-  opacity:0.8;
-  border:0px solid #d6d6d6;
+margin:0px;
 margin-top: 0px;
 margin-right: auto;
-margin-bottom: 0;
+margin-bottom: 0px;
 margin-left: auto;
+
+height: 100%;
+width: 50%;
+	
+opacity:0.8;
 text-align: center;
-
-
-  height: 100%;
-  width: 50%;
-
+border:0px solid #d6d6d6;
 }
 
-.litentext {
-    font-size: 18px ;
-    color: solid black;
-    text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
-	text-align: center;
-	position: relative;
+.litentext
+{
+position: relative;
+	
+font-size: 18px ;
+color: black;
+text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
+text-align: center;
 	
 }
 
 
-
 #forum
 {
-background: url('forumbutton12.png');
-font-size: 40px;
+z-index: 1;
+position: absolute;
+
 top: 15%;
 right: 10%;
-position: absolute;
-z-index: 1;
+
+background: url('forumbutton12.png');
 opacity: 0.7;
 }
 
 #forum:hover, #forum:active
 {
-/* background: url('forumbutton12.png'); */
 opacity: 1;
 z-index: 1;
 }
 
 #home
 {
-font-size: 40px;
-top: 15%;
-left: 10%;
 position: absolute;
 z-index: 1;
+
+top: 15%;
+left: 10%;
+
 opacity: 0.7;
 size: 110%;
-
 }
 
 #home:hover, #home:active
 {
-/* background: url('homebutton.png'); */
 opacity: 1;
 z-index: 1;
 }
@@ -151,21 +149,22 @@ select
 {
     width: 150px;
 	height: 30px;
-        font-size: 20px;
+        border:solid 1px black; 
+		border-radius: 15px;
+		margin: 5px;
+		
+		font-size: 20px;
         color:#727272;
-        border-radius: 15px;
-        margin: 0px;
 		text-align: center;
 		 opacity:0.9;
-		 border:solid 1px black;
+		
 
 }
 
 input[type=text]
 {
     background-color: #FFGFGF;
-    border:solid 10px #BFBDBD;
-        border-color: white;
+    border-color: white;
     color: #979797;
     height: 30px;
     padding-left:10px;
@@ -209,7 +208,7 @@ table
 min-width: 1000px;
 width: 100%;
 color: #939393;
-margin-top: 300px;
+margin-top: 200px;
 
 background: black;
 z-index: -1;
@@ -247,7 +246,7 @@ footer
 {
 bottom:0px;
 z-index:1;
-/*height: 240px;*/
+font-size: 14px;
 background: black;
 
 opacity:0.5;
