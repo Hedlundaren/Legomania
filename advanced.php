@@ -10,53 +10,40 @@ include "header advanced.php";
 	mysql_select_db ("lego");
 
 
-if($_POST)
+if($_GET)
 {
-	$Setname = $_POST ["Setname"];
-	$SetID = $_POST["SetID"];
-	$Categoryname = $_POST["Categoryname"];
-	$CatID = $_POST["CatID"];
-	$Year = $_POST["Year"];
-	$PartID = $_POST["PartID"];
-	
-		/* ---Förra------------------------------
-        	$query = "(
-                SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
-                FROM sets
-                WHERE sets.SetID = '$setID'
-                        AND sets.Setname = '$setname'
-                        AND sets.CatID = '$catID'
-                        AND sets.Year = '$year'
-                        AND categories.Categoryname = '$categoryname'
-                        AND parts.PartID = '$partID')";
-		   ---Förra------------------------------*/
+	$Setname = $_GET ["Setname"];
+	$SetID = $_GET["SetID"];
+	$Categoryname = $_GET["Categoryname"];
+	$CatID = $_GET["CatID"];
+	$Year = $_GET["Year"];
+	$PartID = $_GET["PartID"];
+
+
+			/*---paging2---*/
+		if (isset($_GET["page"])){
+			$page  = $_GET["page"];
+		}
+		else{
+			$page=1;
+		};
+		$start_from = ($page-1) * 20; 
 		
+		//början query-stringen
+		$queryStartNormal = "(SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
+					FROM sets 
+					WHERE 1 ";
+				  
+		$queryStartCount = "(SELECT DISTINCT COUNT(sets.Setname)
+					FROM sets
+					WHERE 1 ";		
+					
+		$query = " ";
 		
-	/* Idé: */
+	/* Idé: 
 	$query = "(SELECT DISTINCT sets.Setname, sets.SetID, sets.Year
         FROM sets 
-		WHERE 1 ";
-		//WHERE sets.SetID = '$setID'" tog ut
-	
-	//Frågan byggs på med varje if-sats
-	//om first-funktion visar false, lägg till AND innan 'inte klart'
-        
-		/*----funktionstest----
-		function extendQuery($x){
-			if (!$x == ""){
-				$query = $query . "AND sets.$x = '$x'";
-			}
-			elseif($x == ""){
-				$query = $query . "AND sets.$x = '*'";
-			}
-		} */
-		/*----från labb5----
-		$query = "SELECT * FROM p WHERE 1";
-		foreach ($_POST as $name => $value) {
-			if($value!='')
-				$query = $query . " AND " . $name . " = '" . $value . "'";  
-}
-		*/
+		WHERE 1 ";*/
 		
 		//SetId
 		if ($SetID!=""){
@@ -102,10 +89,11 @@ if($_POST)
         }
 
 		
-	$query = $query . ')';
+	$queryNormal = $queryStartNormal . $query . " LIMIT $start_from, 20)";
 	
-	print($query);    
-	$contents = mysql_query($query) or trigger_error(mysql_error().$contents);
+	print($queryNormal);
+	
+	$contents = mysql_query($queryNormal) or trigger_error(mysql_error().$contents);
 
 //Utskrift
 	print("<table border='border' cellpadding='6' cellspacing='3'>\n");
@@ -171,6 +159,20 @@ if($_POST)
 	}
 	print("</table>\n");
 
+			/***paging2***/
+		//Räkna resultat
+		$queryCount = $queryStartCount . $query . ')';
+		
+		$rs_result = mysql_query($queryCount);
+		$row = mysql_fetch_row($rs_result);
+		$total_records = $row[0];
+		$total_pages = ceil($total_records/20);
+
+		for ($i = 1; $i <= $total_pages; $i++) {
+			echo"<a href='advanced.php?page=".$i."&SetID=".$SetID."&Year=".$Year."&Setname=".$Setname."&Categoryname=".$Categoryname."&CatID=".$CatID."&PartID=".$PartID."'>".$i."</a> ";
+		}
+
+	
 	mysql_close($connection);
 }
 
