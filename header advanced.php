@@ -10,7 +10,7 @@
 
 <!--Advance search--> 
 <header><br><br><br><br><br><br><br><br><br><br>
-<form name="wizard" action="advanced.php" method="post">
+<form name="wizard" action="advanced.php" method="get">
 	<p id="input"><!--<label>-->
 	<input type ="text" name = "SetID" placeholder = "Enter SetID" size = "10"/>
 	<input type ="text" name = "Year" placeholder = "Enter year" size = "10"/>
