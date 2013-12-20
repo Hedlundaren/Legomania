@@ -14,14 +14,13 @@ body{
 		}
 
 		#header{
+			
 			z-index:1;
-			padding:10px;
+		
 			position: fixed;
 				
 			width:100%;
-			height: 25%;	
-			/*margin:0px;
-			top:0px;*/
+			height: 20%;	
 				
 			opacity:1;
 		}
@@ -29,8 +28,8 @@ body{
 		#content{
 			overflow-y: scroll;
 			width: 100%;
-			top: 25%;
-			height: 70%;
+			/*top: 20%;*/
+			height: 100%;
 			position: fixed;
 			/* padding-bottom:40px;  Height of the footer element */
 		}
@@ -63,8 +62,14 @@ a:hover{
 }
 
 #advanced{
-	font-size: 14px;
-	z-index: 2;
+	color: black;
+	opacity: 0.7;
+	font-style: italic; 
+}
+
+#advanced:hover{
+
+	opacity: 1;
 }
 
 #background{
@@ -81,19 +86,16 @@ a:hover{
 
 #headerpic{
 	min-width: 1000px;
-}
-
-#fade{
-	position: relative;
-	z-index: 0;
+	
 }
 
 
 #wizard{
 	z-index: 1;
-	/*position: absolute;*/
+	position: absolute;
 
 	width:100%;
+	top: 5%;
 	min-width: 1000px;
 	margin-top: 0px;
 	margin-right: auto;
@@ -156,7 +158,7 @@ a:hover{
 	left: 10%;
 
 	opacity: 0.7;
-	size: 110%;
+	size: 100%;
 }
 
 #home:hover, #home:active{
@@ -166,42 +168,42 @@ a:hover{
 
 
 select{
-    	width: 150px;
+    width: 150px;
 	height: 30px;
         border:solid 1px black; 
-	border-radius: 15px;
-	margin: 5px;
+		border-radius: 15px;
+		margin: 5px;
 		
-	font-size: 20px;
+		font-size: 20px;
         color:#727272;
-	text-align: center;
-	opacity:0.9;
+		text-align: center;
+		 opacity:0.9;
 }
 
 input[type=text]{
-	background-color: #FFGFGF;
-	border-color: white;
-	color: #979797;
-	height: 30px;
-	padding-left:10px;
+    background-color: #FFGFGF;
+    border-color: white;
+    color: #979797;
+    height: 30px;
+    padding-left:10px;
 	margin-top: 0px;
-	width: 250px;
+    width: 250px;
         
         font-size: 20px;
         font-style:Arial Black;
         border-radius: 25px;
-	text-align: center;
-	opacity:0.9;
-	border:solid 1px black;
+		text-align: center;
+		  opacity:0.9;
+		  border:solid 1px black;
 }
 
 
 
 input[type=submit]{
-	width: 70px;
+    width: 70px;
         height: 30px;
-        margin: 10px;
-	font-size: 20px;
+                margin: 10px;
+					font-size: 20px;
 }
 
 input[type=reset]{
@@ -211,7 +213,6 @@ input[type=reset]{
 	font-size: 20px;
         
 }
-
 input[type=checkbox]{
 }
 
@@ -221,6 +222,7 @@ table{
 	background: black;
 	z-index: -1;
 	border: solid 0px black;
+	margin-top: 200px;
 }
 
 th{
@@ -247,8 +249,12 @@ td a:hover{
 } 
 
 title {
-	font-size: 20px; 
+		font-size: 20px; 
         color:#727272;
-	text-align: center;
-	opacity:0.9;
+		text-align: center;
+		opacity:0.9;
+}
+
+.pages{
+	color:black;
 }
