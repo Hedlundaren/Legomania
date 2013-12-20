@@ -26,11 +26,11 @@ print ("<tr><td><h3>Estimated time required: $qvant min </h3></td></tr></tr><tr>
 			$jpg_url = $img_dir . 'SL/' . $setID . '.jpg';
 
 			if(@fclose(@fopen($gif_url, "r"))){
-				print("<td><a href='$gif_url'> <img src='$gif_url' alt='gif-image' /></a></td>");
+				print("<td><img src='$gif_url' alt='gif-image' /></td>");
 			}
 			
 			else if(@fclose(@fopen($jpg_url, "r"))){
-				print("<td><a href='$jpg_url'><img src='$jpg_url' alt='jpg-image' /></a></td>");
+				print("<td><img src='$jpg_url' alt='jpg-image' /></td>");
 			}
 			
 			else{
