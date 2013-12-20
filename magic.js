@@ -1,4 +1,4 @@
-$(".pictureColumn").hide();
+$(".pictureColumn").show();
 
 $("input[name=image]")
         .change(function(){
@@ -7,7 +7,7 @@ $("input[name=image]")
                 else
                         $(".pictureColumn").hide();
         });
-		
+                
 $(".parts").hide();
 
 $("input[name=parts]")
@@ -17,3 +17,7 @@ $("input[name=parts]")
                 else
                         $(".parts").hide();
         });
+		
+$(function() {
+$( document ).tooltip();
+});
