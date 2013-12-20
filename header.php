@@ -34,13 +34,12 @@
 							<option value="Categoryname">Categoryname</option>
 						</select>
 				</label>
-
+			<img id="question" src = "Questionmark.jpg" alt="Questionmark" title = "Select what you want to search sets by. SetID, Setname and Categoryname will show everything that have your input in it. Year will only show the correct input"/>
 			<!--sökfält-->
 			<br>
 			<input type ="text" name ="search" placeholder = "Enter input!" />
 			<br/>
 			
-			<img src = "Questionmark.jpg" alt="Questionmark" title = "Select what you want to search sets by.	SetID, Setname and Categoryname will show everything that have your input in it.	Year will only show the correct input"/>
 			
 			<!--knappar-->
 			<input type = "submit" value = "Find"/>
