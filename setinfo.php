@@ -34,12 +34,13 @@ print ("<tr><td><h3>Estimated time required: $qvant min </h3></td></tr></tr><tr>
 			}
 			
 			else{
-				print("<td>" . "bild saknas" . "</td>");
+				print("<td>" . "No Image" . "</td>");
 			}
-print ("</tr></table>");
-		
+
+			print ("</tr></table>");
+			print ("<div  class='litentext' id='showparts'>Show parts: <input type = 'checkbox' name = 'parts' value = 'Show'></div>");	
 //Välj ifall du ska visa delarna i valt set
-print ("Show parts: <input type = 'checkbox' name = 'parts' value = 'Show'>");
+
 
 
 // Visa alla delar i valt set 
@@ -52,7 +53,7 @@ $query = "(
 
 $contents = mysql_query("$query");
 
-print("<table class='parts' border='border' cellpadding='6' cellspacing='3'>\n");
+print("<table id='setinfotable' class='parts' border='border' cellpadding='6' cellspacing='3'>\n");
 	print("<tr>");
 	print("<th class='pictureColumn'>Image</th>");
 
@@ -101,7 +102,7 @@ print("<table class='parts' border='border' cellpadding='6' cellspacing='3'>\n")
 		}
 
 		else{
-			print("<td class='pictureColumn'>" . "bild saknas" . "</td>");
+			print("<td class='pictureColumn'>" . "No Image" . "</td>");
 		}
 
 		for($i = 0;$i < mysql_num_fields($contents) -1; $i++){
