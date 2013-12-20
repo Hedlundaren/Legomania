@@ -7,9 +7,8 @@
 </head>
 
 <body>
-
-	<header>
-
+<div id="wrapper">
+	<div id="header">
 		<!--bakgrund i header-->
 		<div id="fade">
 		<img id="headerpic" src="bakgrundopacity.png"> 
@@ -37,38 +36,40 @@
 						</select>
 				</label>
 
-	<!--sökfält-->
+			<!--sökfält-->
 			<br>
 			<input type ="text" name ="search" placeholder = "Enter input!" />
 			<br/>
+			
+			<img src = "Questionmark.jpg" alt="Questionmark" title = "Select what you want to search sets by.	SetID, Setname and Categoryname will show everything that have your input in it.	Year will only show the correct input"/>
 			
 			<!--knappar-->
 			<input type = "submit" value = "Find"/>
 			<input type = "reset" value = "Clear"/>
 			
-			<div class="litentext">Show images: <input type = "checkbox" name = "image" value = "Show">
+			<div class="litentext">Show images: <input type = "checkbox" name = "image" value = "Show" >
 			</div>
 
 		</form>
 
 		<!--Avancerad sök-->
 		<div id="advanced">
-		<a href = "advanced.php"> Advance search 
+		<a href = "advanced.php"> Advance search </a>
 		</div>
 
-	</header>
-
+	</div><!--sluttagg header-->
+	<div id="content">
+	
 	<!-- Fråga hur man bäst validerar, och hur man gör för att det inte ska gå vidare! -->
 	<script>
 	function validate(){
 	var form = document.forms["wizard"]["search"].value;
 
-	if (form == "Enter input!" || form == "Null" || form == "")
-	{
-	window.alert("Please enter input!");
-	return false;
+	if (form == "Enter input!" || form == "Null" || form == ""){
+		window.alert("Please enter input!");
+		return false;
 	}
-	return true;
+		return true;
 	}
 	</script>
 
@@ -77,12 +78,11 @@
 	 <!--opacity för tabell-->
 	<div class="opacitybox">
 
-<?php
-        $connection = mysql_connect ("mysql.itn.liu.se", "lego", "")
-                //Om databas lokalt nerladdad,
-                        //$connection = mysql_connect ("localhost", "lego", "")
-                or die ("Connection failed!");
-        
-        mysql_select_db ("lego");
-?>
-
+	<?php
+		$connection = mysql_connect ("mysql.itn.liu.se", "lego", "")
+			//Om databas lokalt nerladdad,
+			//$connection = mysql_connect ("localhost", "lego", "")
+		or die ("Connection failed!");
+			
+		mysql_select_db ("lego");
+	?>
