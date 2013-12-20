@@ -115,7 +115,7 @@ if($_GET)
                         }
                         
                         else{
-                                print("<td class='pictureColumn'>" . "bild saknas" . "</td>");
+                                print("<td class='pictureColumn'>" . "No image" . "</td>");
                         }
 
 
@@ -133,7 +133,9 @@ if($_GET)
 		$total_pages = ceil($total_records/20);
 
 		for ($i = 1; $i <= $total_pages; $i++) {
-			echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
+
+			echo '<a class="litentext" href="search.php?page='.$i.'&alternativ='.$value.'&search="'.$search.'">'.$i.'</a> ';
+
 		}
 		
 		
