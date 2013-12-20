@@ -115,7 +115,7 @@ a:hover{
 	margin-left: auto;
 
 	height: 100%;
-	width: 50%;
+	width: 1000px;
 		
 	opacity:0.8;
 	text-align: center;
@@ -166,42 +166,42 @@ a:hover{
 
 
 select{
-    width: 150px;
+    	width: 150px;
 	height: 30px;
         border:solid 1px black; 
-		border-radius: 15px;
-		margin: 5px;
+	border-radius: 15px;
+	margin: 5px;
 		
-		font-size: 20px;
+	font-size: 20px;
         color:#727272;
-		text-align: center;
-		 opacity:0.9;
+	text-align: center;
+	opacity:0.9;
 }
 
 input[type=text]{
-    background-color: #FFGFGF;
-    border-color: white;
-    color: #979797;
-    height: 30px;
-    padding-left:10px;
+	background-color: #FFGFGF;
+	border-color: white;
+	color: #979797;
+	height: 30px;
+	padding-left:10px;
 	margin-top: 0px;
-    width: 250px;
+	width: 250px;
         
         font-size: 20px;
         font-style:Arial Black;
         border-radius: 25px;
-		text-align: center;
-		  opacity:0.9;
-		  border:solid 1px black;
+	text-align: center;
+	opacity:0.9;
+	border:solid 1px black;
 }
 
 
 
 input[type=submit]{
-    width: 70px;
+	width: 70px;
         height: 30px;
-                margin: 10px;
-					font-size: 20px;
+        margin: 10px;
+	font-size: 20px;
 }
 
 input[type=reset]{
@@ -211,15 +211,13 @@ input[type=reset]{
 	font-size: 20px;
         
 }
+
 input[type=checkbox]{
 }
 
 table{
-	min-width: 1000px;
 	width: 100%;
 	color: #939393;
-	/*margin-top: 200px;*/
-
 	background: black;
 	z-index: -1;
 	border: solid 0px black;
@@ -249,8 +247,8 @@ td a:hover{
 } 
 
 title {
-		font-size: 20px; 
+	font-size: 20px; 
         color:#727272;
-		text-align: center;
-		opacity:0.9;
+	text-align: center;
+	opacity:0.9;
 }
