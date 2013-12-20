@@ -10,9 +10,8 @@
 <div id="wrapper">
 	<div id="header">
 		<!--bakgrund i header-->
-		<div id="fade">
-		<img id="headerpic" src="bakgrundopacity.png"> 
-		</div>
+		<img id="headerpic" src="bakgrundopacity.png">
+		
 
 		<!--innehåller alla element i header-->
 		<form id ="wizard" name="wizard" action="search.php" method="get" onsubmit="return validate()"> 
@@ -47,15 +46,23 @@
 			<input type = "submit" value = "Find"/>
 			<input type = "reset" value = "Clear"/>
 			
-			<div class="litentext">Show images: <input type = "checkbox" name = "image" value = "Show" checked>
+			<div class="litentext">
+			Show images:
+			<input type = "checkbox" name = "image" value = "Show" checked>
+			
+			<!--Avancerad sök-->
+			
+			<a id ="advanced" href = "advanced.php" >
+			&nbsp;&nbsp;&nbsp; Advanced search
+			</a>
+			
 			</div>
-
+			
+			
+		
 		</form>
 
-		<!--Avancerad sök-->
-		<div id="advanced">
-		<a href = "advanced.php"> Advance search </a>
-		</div>
+		
 
 	</div><!--sluttagg header-->
 	<div id="content">
