@@ -1,64 +1,64 @@
 body{
-	/*min-width: 100%;
-	min-height: 100%;*/
-	height:100%;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
+        /*min-width: 100%;
+        min-height: 100%;*/
+        height:100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
 }
 
-		/*struktur*/
-		#wrapper{
-			height:100%;
-			/*position:relative;*/
-		}
+                /*struktur*/
+                #wrapper{
+                        height:100%;
+                        /*position:relative;*/
+                }
 
-		#header{
-			
-			z-index:1;
-		
-			position: fixed;
-				
-			width:100%;
-			height: 20%;	
-				
-			opacity:1;
-		}
+                #header{
+                        
+                        z-index:1;
+                
+                        position: fixed;
+                                
+                        width:100%;
+                        height: 20%;        
+                                
+                        opacity:1;
+                }
 
-		#content{
-			overflow-y: scroll;
-			width: 100%;
-			/*top: 20%;*/
-			height: 100%;
-			position: fixed;
-			/* padding-bottom:40px;  Height of the footer element */
-		}
+                #content{
+                        overflow-y: scroll;
+                        width: 100%;
+                        /*top: 20%;*/
+                        height: 100%;
+                        position: fixed;
+                        /* padding-bottom:40px; Height of the footer element */
+                }
 
-		#footer{
-			width:100%;
-			height: 5%;		/*samma som padding-bottom i content*/
-			position: absolute;
-			bottom:0;
-			left:0;
-			background:black;
-			
-			/*z-index:1;*/
-			font-size: 14px;
-			background: black;
+                #footer{
+                        width:100%;
+                        height: 5%;                /*samma som padding-bottom i content*/
+                        position: absolute;
+                        bottom:0;
+                        left:0;
+                        background:black;
+                        
+                        /*z-index:1;*/
+                        font-size: 14px;
+                        background: black;
 
-			/*opacity:0.5;*/
-			/*border:0px solid black;*/
-			/*margin:0px;*/
-		}
-		
+                        /*opacity:0.5;*/
+                        /*border:0px solid black;*/
+                        /*margin:0px;*/
+                }
+                
 a{
-	text-decoration:none;
-	color: #939393;
+        text-decoration:none;
+        color: #939393;
 }
 
 a:hover{
-	text-decoration:none;
-	color: white;
+        text-decoration:none;
+        color: white;
 }
 
 #question{
@@ -70,122 +70,123 @@ width: 20px;
 
 
 #advanced{
-	color: black;
-	opacity: 0.7;
-	font-style: italic; 
+        color: black;
+        opacity: 0.7;
+        font-style: italic;
 }
 
 #advanced:hover{
 
-	opacity: 1;
+        opacity: 1;
 }
 
 #background{
-	position: fixed;
-	z-index: -1;
+        position: fixed;
+        z-index: -1;
 
-	height: 100%;
-	width: 100%;
-	min-width: 1910px;
-	min-height: 1060px;
-	margin: 0px;
-	top: 0px;
+        height: 100%;
+        width: 100%;
+        min-width: 1910px;
+        min-height: 1060px;
+        margin: 0px;
+        top: 0px;
 }
 
 #headerpic{
-	min-width: 1000px;
-	
+        min-width: 1000px;
+		max-width: 1800px;
+        z-index: 0;
 }
 
 
 #wizard{
-	z-index: 1;
-	position: absolute;
+        z-index: 1;
+        position: absolute;
 
-	width:100%;
-	top: 5%;
-	min-width: 1000px;
-	margin-top: 0px;
-	margin-right: auto;
-	margin-bottom: 0;
+        width:100%;
+        top: 5%;
+        min-width: 1000px;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0;
 
-	text-align: center;
+        text-align: center;
 }
 
 
 .opacitybox{
-	z-index: 0;
-		
-	padding:0px;
+        z-index: 0;
+                
+        padding:0px;
 
-	margin:0px;
-	margin-top: 0px;
-	margin-right: auto;
-	margin-bottom: 0px;
-	margin-left: auto;
+        margin:0px;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
 
-	height: 100%;
-	width: 1000px;
-		
-	opacity:0.8;
-	text-align: center;
-	border:0px solid #d6d6d6;
+        height: 100%;
+        width: 1000px;
+                
+        opacity:0.8;
+        text-align: center;
+        border:0px solid #d6d6d6;
 }
 
 .litentext{
-	position: relative;
-		
-	font-size: 18px ;
-	color: black;
-	text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
-	text-align: center;
+        position: relative;
+                
+        font-size: 18px ;
+        color: black;
+        text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
+        text-align: center;
 }
 
 
 #forum{
-	z-index: 1;
-	position: absolute;
+        z-index: 1;
+        position: absolute;
 
-	top: 15%;
-	right: 10%;
+        top: 15%;
+        right: 10%;
 
-	background: url('forumbutton12.png');
-	opacity: 0.7;
+        background: url('forumbutton12.png');
+        opacity: 0.7;
 }
 
 #forum:hover, #forum:active{
-	opacity: 1;
-	z-index: 1;
+        opacity: 1;
+        z-index: 1;
 }
 
 #home{
-	position: absolute;
-	z-index: 1;
+        position: absolute;
+        z-index: 1;
 
-	top: 15%;
-	left: 10%;
+        top: 15%;
+        left: 10%;
 
-	opacity: 0.7;
-	size: 100%;
+        opacity: 0.7;
+        size: 100%;
 }
 
 #home:hover, #home:active{
-	opacity: 1;
-	z-index: 1;
+        opacity: 1;
+        z-index: 1;
 }
 
 
 select{
     width: 150px;
-	height: 30px;
-        border:solid 1px black; 
-		border-radius: 15px;
-		margin: 5px;
-		
-		font-size: 20px;
+        height: 30px;
+        border:solid 1px black;
+                border-radius: 15px;
+                margin: 5px;
+                
+                font-size: 20px;
         color:#727272;
-		text-align: center;
-		 opacity:0.9;
+                text-align: center;
+                 opacity:0.9;
 }
 
 input[type=text]{
@@ -194,15 +195,15 @@ input[type=text]{
     color: #979797;
     height: 30px;
     padding-left:10px;
-	margin-top: 0px;
+        margin-top: 0px;
     width: 250px;
         
         font-size: 20px;
         font-style:Arial Black;
         border-radius: 25px;
-		text-align: center;
-		  opacity:0.9;
-		  border:solid 1px black;
+                text-align: center;
+                 opacity:0.9;
+                 border:solid 1px black;
 }
 
 
@@ -211,75 +212,78 @@ input[type=submit]{
     width: 70px;
         height: 30px;
                 margin: 10px;
-					font-size: 20px;
+                                        font-size: 20px;
 }
 
 input[type=reset]{
     width: 70px;
     height: 30px;
     margin: 10px;
-	font-size: 20px;
+        font-size: 20px;
         
 }
 input[type=checkbox]{
 }
 
 table{
-	width: 100%;
-	color: #939393;
-	background: black;
-	z-index: -1;
-	border: solid 0px black;
-	margin-top: 200px;
+        width: 100%;
+        color: #939393;
+        background: black;
+        z-index: -1;
+        border: solid 0px black;
+        margin-top: 200px;
+		padding-bottom: 0px;
+}
+
+#setinfotable{
+
+		top: 0px;
+        background: #fc9f3c;
+		margin-top: 0px;
+		margin-bottom: 100px;
+
+}
+
+#showparts{
+
+		background: black;
+		width: 100%;
+		color: white;
+		padding-bottom: 10px;
+
 }
 
 th{
-	font-size: 30px;
-	font-style: Verdana;
-	background: #3d3d3d;
-	height: 60px;
+        font-size: 30px;
+        font-style: Verdana;
+        background: #3d3d3d;
+        height: 60px;
 }
 
 td{
-	background: black;
-	font-size: 22px;
-	font-style: Verdana;
+        background: black;
+        font-size: 22px;
+        font-style: Verdana;
 }
 
 td a {
-	display: block;
-	padding-top:25px;
-	height: 60px;
+        display: block;
+        padding-top:25px;
+        height: 60px;
 }
 
 td a:hover{
-	background-color:#bc6100;
-	color: black; 
-} 
+        background-color:#bc6100;
+        color: black;
+}
 
 title {
-		font-size: 20px; 
+                font-size: 20px;
         color:#727272;
-		text-align: center;
-		opacity:0.9;
+                text-align: center;
+                opacity:0.9;
 }
 
 .pages{
-	color:black;
-}
-
-.false {
-
-	text-decoration:none;
-	color: #939393;
-}
-
-.false:hover{
-	text-decoration:none;
-	color: black; 
-}
-
-.page{
-	text-decoration:none;
-	color: black; 
+        color:black;
 }
