@@ -267,3 +267,19 @@ title {
 .pages{
 	color:black;
 }
+
+.false {
+
+	text-decoration:none;
+	color: #939393;
+}
+
+.false:hover{
+	text-decoration:none;
+	color: black; 
+}
+
+.page{
+	text-decoration:none;
+	color: black; 
+}
