@@ -47,7 +47,7 @@
 			<input type = "submit" value = "Find"/>
 			<input type = "reset" value = "Clear"/>
 			
-			<div class="litentext">Show images: <input type = "checkbox" name = "image" value = "Show" >
+			<div class="litentext">Show images: <input type = "checkbox" name = "image" value = "Show" checked>
 			</div>
 
 		</form>
