@@ -67,7 +67,10 @@
 
         </div><!--sluttagg header-->
         <div id="content">
-        
+		
+        <!--Bakgrund i body-->
+        <img id="background" src="bakgrund3.png">
+		
         <!-- Fråga hur man bäst validerar, och hur man gör för att det inte ska gå vidare! -->
         <script>
         function validate(){
@@ -81,8 +84,6 @@
         }
         </script>
 
-        <!--Bakgrund i body-->
-        <img id="background" src="bakgrund3.png">
          <!--opacity för tabell-->
         <div class="opacitybox">
 
