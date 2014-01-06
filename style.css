@@ -47,6 +47,34 @@ body{
                         /*border:0px solid black;*/
                         /*margin:0px;*/
                 }
+              
+        /*Main page*/
+	#welcome {
+		z-index:1;
+		position: absolute;
+			top: 200px;
+			left: 37.5%; 
+			right: 37.5%; 
+		min-width: 411px;
+			
+		background-color: rgba(0, 0, 0, 0.8);
+		border: 2px solid black;
+	}
+	
+	.mainText {
+		color: white;
+		font-family: verdana, sans-serif;
+		font-size: 14pt;
+		
+	}
+	
+	#mainImg {
+		position: absolute;
+			top: 500px;
+			left: 37.5%;
+			right: 37.5%
+	
+	}
                 
 a{
         text-decoration:none;
