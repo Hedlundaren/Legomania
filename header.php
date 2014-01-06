@@ -35,8 +35,8 @@
                                                 </select>
                                 </label>
                                 
-                                                <img id="question" src = "Questionmark.jpg" alt="Questionmark" title = "Select what you want to search sets by. SetID, Setname and Categoryname will show everything that have your input in it. Year will only show the correct input"/>
-
+                                               <img id="question" src="Questionmark3.png" alt="Questionmark" 
+						    title="Select attribute to search sets by. SetID, Setname and Categoryname will display any results withincluding your input. For 'year' the input will need to be exact.>
                         <!--sökfält-->
                         <br>
                         <input type ="text" name ="search" placeholder = "Enter input!" />
