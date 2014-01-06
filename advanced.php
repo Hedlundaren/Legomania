@@ -114,7 +114,7 @@ if($_GET)
 		print("</table>\n");
 
 		//Inkludera pagination för advance
-		include "searchfunctions/pagenation2.php";
+		include "searchfunctions/pagenationAdv.php";
 	}
 
 }
