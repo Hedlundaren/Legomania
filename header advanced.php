@@ -9,6 +9,10 @@
 <body>
 <div id="wrapper">
 		<div id="header">
+		<!--bakgrund i header-->
+                <img id="headerpic" src="bakgrundopacityadv.png">
+                <!--bild finns http://www.student.itn.liu.se/~lovha997/bakgrundopacityadv.png-->
+                
 		<!--Advance search--> 
 		<form id ="wizard" name="wizard" action="advanced.php" method="get">
 		
