@@ -1,14 +1,12 @@
 <?php
 include "header.php";
-
-    //Fråga: w3c validering
         
 if($_GET)
 {
         $value = $_GET ["alternativ"];
         $search = $_GET["search"];
 
-		/*---paging2---*/
+		//För pagineringen
 		if (isset($_GET["page"])){
 			$page  = $_GET["page"];
 		}
@@ -17,13 +15,14 @@ if($_GET)
 		};
 		$start_from = ($page-1) * 20; 
 		
-		//början query-stringen
+		//Början query-strängen
 		$queryStartNormal = "(SELECT sets.Setname, sets.SetID, sets.Year
                   FROM sets ";
 				  
 		$queryStartCount = "(SELECT COUNT(sets.Setname)
                   FROM sets ";
 		
+		//Mitten av query-strängen
         // Alternativ 1: Sök på SetID
         if ($value == "SetID"){
 			$query = "WHERE sets.SetID LIKE '%$search%'";
@@ -47,213 +46,52 @@ if($_GET)
                 $query = "WHERE sets.Year = '$search'";
         }
 
-		//avslutan på query-stringen
+		//Avslutet på query-strängen
 		$queryNormal = $queryStartNormal . $query . " LIMIT $start_from, 20)";
 		
         $contents = mysql_query("$queryNormal");
 		
-		//om inga resultat hittas
-		//br-taggar temporär lösning
+		//Om inga resultat hittas
 		if(mysql_num_rows($contents) == 0){
 			echo("<table><td><h1>No results.</h1></td></table>");
 		}
+		//Annars så fortsätter sökningen och vi skriver ut resultatet
 		else{
 		
-        print("<table border='border' cellpadding='6' cellspacing='3'>\n");
-                print("<tr>");
+			//Skriv ut tabellhuvudet
+			print("<table border='border' cellpadding='6' cellspacing='3'>\n");
+					print("<tr>");
 
-                        for($i = 0; $i < mysql_num_fields($contents); $i++){
-                                $fieldname = mysql_field_name($contents, $i);
-                                print("<th>$fieldname</th>");
-                        }
-                        print("<th class='pictureColumn'>Image</th>");
-
-                print("</tr>\n");
-
-		//utskrift
-        while($row = mysql_fetch_row($contents)){
-                print("<tr>");
-                        print("<td><a href='setinfo.php?setID=$row[1]'>$row[0]</a></td>");
-                        
-                        for($i = 1;$i < mysql_num_fields($contents); $i++){
-                                print("<td>$row[$i]</td>");
-                        }
-
-                        $img_dir = "http://webstaff.itn.liu.se/~stegu76/img.bricklink.com/";
-                        $gif_url = $img_dir . 'S/' . $row[1] . '.gif';
-                        $jpg_url = $img_dir . 'S/' . $row[1] . '.jpg';
-                        
-                                $gifbig_url = $img_dir . 'SL/' . $row[1] . '.gif';
-                                $jpgbig_url = $img_dir . 'SL/' . $row[1] . '.jpg';
-
-                        if(@fclose(@fopen($gif_url, "r"))){
-                                if(@fclose(@fopen($gifbig_url, "r"))){
-                                        print("<td class='pictureColumn'><a href='$gifbig_url'>
-                                        <img src='$gif_url' alt='gif-image' /></a></td>");
-                                }
-                                else if(@fclose(@fopen($jpgbig_url, "r"))){
-                                        print("<td class='pictureColumn'><a href='$jpgbig_url'>
-                                        <img src='$gif_url' alt='gif-image' /></a></td>");
-                                }
-                                else{
-                                        print("<td class='pictureColumn'><img src='$gif_url' alt='gif-image' /></td>");
-                                }
-                        }
-                        
-                        else if(@fclose(@fopen($jpg_url, "r"))){
-                                if(@fclose(@fopen($gifbig_url, "r"))){
-                                        print("<td class='pictureColumn'><a href='$gifbig_url'>
-                                        <img src='$jpg_url' alt='jpg-image' /></a></td>");
-                                }
-                                else if(@fclose(@fopen($jpgbig_url, "r"))){
-                                        print("<td class='pictureColumn'><a href='$jpgbig_url'>
-                                        <img src='$jpg_url' alt='jpg-image' /></a></td>");
-                                }
-                                else{
-                                        print("<td class='pictureColumn'><img src='$jpg_url' alt='jpg-image' /></td>");
-                                }
-                        }
-                        
-                        else{
-                                print("<td class='pictureColumn'>" . "No image" . "</td>");
-                        }
-
-
-                print("</tr>\n");
-        }
-        print("</table>\n");
-		
-		/***paging2***/
-		//Räkna resultat
-		$queryCount = $queryStartCount . $query . ')';
-		
-		$rs_result = mysql_query($queryCount);
-		$row = mysql_fetch_row($rs_result);
-		$total_records = $row[0];
-		$total_pages = ceil($total_records/20);
-
-		
-		$First = 1;
-		$Prev = $page-1;
-		$Next = $page+1;
-		$Last = $total_pages;
-		
-		switch ($page){
-			
-			case $First:
-				
-				print "<a class=false>First</a> ";
-				print "<a class=false>Previous</a> ";
-		
-				if ($total_pages >= 5){
-					for ($i = 1; $i <= 5; $i++) {
-						if ($i == $page)
-							echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-						
-						else
-							echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-					}
-				}
-				else {
-					for ($i = 1; $i <= $total_pages; $i++) {
-						if ($i == $page)
-							echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-						
-						else
-							echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-					}
-				}
-		
-				print "<a href='search.php?page=".$Next."&alternativ=".$value."&search=".$search."'>Next</a> ";
-				print "<a href='search.php?page=".$Last."&alternativ=".$value."&search=".$search."'>Last</a> ";	
-		
-			break;
-				
-			case $total_pages;
-				
-				print "<a href='search.php?page=".$First."&alternativ=".$value."&search=".$search."'>First</a> ";
-				print "<a href='search.php?page=".$Prev."&alternativ=".$value."&search=".$search."'>Previous</a> ";
-				
-				if ($total_pages >= 5){
-					for ($i = $total_pages -4; $i <= $total_pages; $i++) {
-						if ($i == $page)
-							echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-						
-						else
-							echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-					}
-				}
-				else {
-					for ($i = 1; $i <= $total_pages; $i++) {
-						if ($i == $page)
-							echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-						
-						else
-							echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-					}
-				}
-		
-				print "<a class=false>Next</a> ";
-				print "<a class=false>Last</a> ";	
-			break;
-			
-			default:
-				print "<a href='search.php?page=".$First."&alternativ=".$value."&search=".$search."'>First</a> ";
-				print "<a href='search.php?page=".$Prev."&alternativ=".$value."&search=".$search."'>Previous</a> ";
-		
-				if ($total_pages >= 5){
-					switch ($page){
-						case 2:
-							for ($i = $page-1; $i <= $page+3; $i++) {
-							if ($i == $page)
-								echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-							
-							else
-								echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
+							for($i = 0; $i < mysql_num_fields($contents); $i++){
+									$fieldname = mysql_field_name($contents, $i);
+									print("<th>$fieldname</th>");
 							}
-						break;
-						
-						case $total_pages-1:
-							for ($i = $page-3; $i <= $page+1; $i++) {
-								if ($i == $page)
-									echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
+							//En speciell utskrift för vår JS-funktion
+							print("<th class='pictureColumn'>Image</th>");
+
+					print("</tr>\n");
+
+				//Skriv ut resultatet
+				while($row = mysql_fetch_row($contents)){
+						print("<tr>");
+								//Gör en länk till specifikt set
+								print("<td><a class='blockfun' href='setinfo.php?setID=$row[1]'>$row[0]</a></td>");
 								
-								else
-									echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-							}
-						break;
-						
-						default:
-							for ($i = $page-2; $i <= $page+2; $i++) {
-								if ($i == $page)
-									echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-								
-								else
-									echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-							}
-						break;
-					}
+								for($i = 1;$i < mysql_num_fields($contents); $i++){
+										print("<td>$row[$i]</td>");
+								}
+
+								//Inkludera bildraden					
+								include "searchfunctions/imagerow.php";	
+
+						print("</tr>\n");
 				}
-				else {
-					for ($i = 1; $i <= $total_pages; $i++) {
-						if ($i == $page)
-							echo"<a class='page' href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-						
-						else
-							echo"<a href='search.php?page=".$i."&alternativ=".$value."&search=".$search."'>".$i."</a> ";
-					}
-				}
+			print("</table>\n");
+			
+			//Inkludera paginationen
+			include "searchfunctions/pagenation.php";
 		
-				print "<a href='search.php?page=".$Next."&alternativ=".$value."&search=".$search."'>Next</a> ";
-				print "<a href='search.php?page=".$Last."&alternativ=".$value."&search=".$search."'>Last</a> ";	
-			break;
 		}
-		
-		
-		
-		} //else-satsen
-        
-		mysql_close($connection);
 }
 
 include "footer.php";
