@@ -1,11 +1,16 @@
-	</div>	<!--Sluttagg opacity-->
+	<!--Stäng anslutningen-->
+	<?php
+	mysql_close($connection);
+	?>
+	
+	</div>	<!--Sluttagg opacitybox-->
 		
-	</div>	<!--sluttagg content-->
-		<div id="footer">
-		<script type="text/javascript" src="jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="magic.js"></script>
-		</div>
+	</div>	<!--Sluttagg content-->
+	
+		<!--Inkludera JS-filerna-->
+			<script type="text/javascript" src="jquery-1.10.2.js"></script>
+			<script type="text/javascript" src="magic.js"></script>
 
-</div>		<!--sluttagg wrapper-->
+</div>		<!--Sluttagg wrapper-->
 </body>
 </html>
