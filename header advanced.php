@@ -24,10 +24,13 @@
 			<input type = "submit" value = "Find!"/>
 			<input type = "reset" value = "Clear"/>
 			
-			Show images: <input type = "checkbox" name = "image" value = "Show"> 
+			Show images: <input type = "checkbox" name = "image" value = "Show" checked> 
 			</p>
 		</form>
-	</div><!--sluttagg header-->
+		<img id="questionAdv" src="Questionmark_adv.png" alt="questionmark" 
+			title="You can use advanced search to find sets according to more specific details by inputting multiple pieces of information. When searching for the setname or categoryname the search will display similar results to your input, for the other attributes the search terms need to be exact."/>
+		
+		</div><!--sluttagg header-->
 	<div id="content">
 
 		<img id="background" src="background.jpg">
