@@ -10,36 +10,35 @@
 <div id="wrapper">
         <div id="header">
                 <!--bakgrund i header-->
-                <img id="headerpic" src="bakgrundopacity.png">
+                <img id="headerpic" src="pictures/bakgrundopacity.png" alt="Header picture.">
                 
 
                 <!--innehåller alla element i header-->
                 <form id ="wizard" name="wizard" action="search.php" method="get" onsubmit="return validate()">
                         <!--länk till startsidan-->
-                        <a id="home" href="https://www.facebook.com/">
-                        <img src="homebutton.png"> </a>
+                        <a id="home" href="main.php">
+                        <img src="pictures/homebutton.png" alt="Home button"> </a>
 
                         <!--Forumlänk-->
                         <a id="forum" href="http://www.sermon.se/legoforum">
-                        <img src="forumbutton12.png"></a>
-
-                                <label>
-                                        <div class="litentext">Search sets by: &nbsp;
-                                        </div>
+                        <img src="pictures/forumbutton12.png" alt="Forum button"></a>
+                        <div class="litentext" >Search sets by: &nbsp;</div>
+								<label>
                                         <!--en lista med alternativen för vad man ska söka-->
-                                                <select name="alternativ">
-                                                        <option value="SetID">SetID</option>
-                                                        <option value="Setname">Setname</option>
-                                                        <option value="Year">Year</option>
-                                                        <option value="Categoryname">Categoryname</option>
-                                                </select>
+                                            <select name="alternativ">
+                                                <option value="SetID">SetID</option>
+                                                <option value="Setname">Setname</option>
+                                                <option value="Year">Year</option>
+                                                <option value="Categoryname">Categoryname</option>
+                                            </select>
                                 </label>
-                                
-                                               <img id="question" src="Questionmark3.png" alt="Questionmark" 
-						    title="Select attribute to search sets by. SetID, Setname and Categoryname will display any results withincluding your input. For 'year' the input will need to be exact.>
+                        <!--Inforuta om hur man söker-->        
+                        <img id="question" src = "pictures/Questionmark3.png" alt="Questionmark" 
+						title = "Select attribute to search sets by. SetID, Setname and Categoryname will display any results which include you input. For 'year' the input will need to be exact."/>
+
                         <!--sökfält-->
                         <br>
-                        <input type ="text" name ="search" placeholder = "Enter input!" />
+							<input type ="text" name ="search" placeholder = "Enter input!" />
                         <br/>
                         
                         
@@ -47,19 +46,16 @@
                         <input type = "submit" value = "Find"/>
                         <input type = "reset" value = "Clear"/>
                         
+						<!--JS-funktion-->
                         <div class="litentext">
-                        Show images:
-                        <input type = "checkbox" name = "image" value = "Show" checked>
-                        
-                        <!--Avancerad sök-->
-                        
-                        <a id ="advanced" href = "advanced.php" >
-                        &nbsp;&nbsp;&nbsp; Advanced search
-                        </a>
-                        
-                        </div>
-                        
-                        
+							Show images:
+							<input type = "checkbox" name = "image" value = "Show" checked>
+							
+							<!--Avancerad sök-->                     
+							<a id ="advanced" href = "advanced.php" >
+							&nbsp;&nbsp;&nbsp; Advanced search
+							</a>                       
+                        </div>                                             
                 
                 </form>
 
@@ -67,11 +63,11 @@
 
         </div><!--sluttagg header-->
         <div id="content">
-		
+        
         <!--Bakgrund i body-->
-        <img id="background" src="bakgrund3.png">
+        <img id="background" src="pictures/bakgrund3.png" alt="Background">
 		
-        <!-- Fråga hur man bäst validerar, och hur man gör för att det inte ska gå vidare! -->
+        <!--Validera sökningen-->
         <script>
         function validate(){
         var form = document.forms["wizard"]["search"].value;
@@ -83,11 +79,12 @@
                 return true;
         }
         </script>
-
-         <!--opacity för tabell-->
+		
+         <!--Opacity för tabell-->
         <div class="opacitybox">
 
         <?php
+				//Öppna anslutning
                 $connection = mysql_connect ("mysql.itn.liu.se", "lego", "")
                         //Om databas lokalt nerladdad,
                         //$connection = mysql_connect ("localhost", "lego", "")
