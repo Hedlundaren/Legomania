@@ -1,17 +1,25 @@
-
 body{
-        /*min-width: 100%;
-        min-height: 100%;*/
         height:100%;
         padding: 0;
         margin: 0;
         overflow: hidden;
 }
 
-                /*struktur*/
+	#background{
+	        position: fixed;
+	        z-index: -1;
+	        height: 100%;
+	        width: 100%;
+	        min-width: 1910px;
+	        min-height: 1060px;
+	        margin: 0px;
+	        top: 0px;
+	}
+
+
+                /*Grundstruktur inuti body*/
                 #wrapper{
                         height:100%;
-                        /*position:relative;*/
                 }
 
                 #header{
@@ -22,17 +30,49 @@ body{
                         height: 20%;
                         opacity:1;
                 }
+                
+				                          
+				#headerpic{
+				        min-width: 1000px;		
+				}
+				
+				
+				#wizard{
+				        z-index: 1;
+				        position: absolute;
+				        width:100%;
+				        top: 5%;
+				        min-width: 1000px;
+				        margin-top: 0px;
+				        margin-right: auto;
+				        margin-left: auto;
+				        text-align: center;
+				}
+				
+				#wizardadv{
+				        z-index: 1;
+				        position: absolute;
+				        width:100%;
+				        top: 5%;
+				        min-width: 1500px;
+				        margin-top: 0px;
+				        margin-right: auto;
+				        margin-left: auto;
+				        text-align: center;
+				}
+
+
+
 
                 #content{
                         overflow: auto;
                         width: 100%;
                         height: 100%;
                         position: fixed;
-                        /* padding-bottom:40px; Height of the footer element */
                 }
      
 	 
-	    /*Main page*/
+	    /*Huvudsida*/
         #welcome {
                 z-index: -1;
 		position: relative;
@@ -68,270 +108,245 @@ body{
 		top: 800px;
 		left: 48%;
 		}
-	 
-a{
-        text-decoration:none;
-        color: #939393;
-}
 
-a:hover{
-        text-decoration:none;
-        color: white;
-}
+/*Search och Advanced search*/
 
-
-#question{
-	margin-bottom: -3px;
-	height: 20px;
-	width: 20px;
-	z-index:10;
-}
-
-#questionAdv{
-	margin-bottom: -3px;
-	height: 20px;
-	width: 20px;
-	z-index: 10;
-}
-
-
-#advanced{
-        color: black;
-        opacity: 0.7;
-        font-style: italic;
-}
-
-#advanced:hover{
-        opacity: 1;
-}
+	 /*design för små texter*/	 
+	a{
+	        text-decoration:none;
+	        color: #939393;
+	}
+	
+	a:hover{
+	        text-decoration:none;
+	        color: white;
+	}
+	
+	
+	
+		#advanced{
+		        color: black;
+		        opacity: 0.7;
+		        font-style: italic;
+		}
+		
+		#advanced:hover{
+		        opacity: 1;
+		}
+	
+			.litentext{
+			        position: relative;
+			        font-size: 18px;
+			        color: black;
+			        text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
+			        text-align: center;
+			}
 
 
-#background{
-        position: fixed;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        min-width: 1910px;
-        min-height: 1060px;
-        margin: 0px;
-        top: 0px;
-}
 
 
-#headerpic{
-        min-width: 1000px;		
-}
+/*Knappar för Forum, Home, Questionamark och Show Parts checkbox*/
+
+	#forum{
+	        z-index: 1;
+	        position: absolute;
+	        top: 15%;
+	        right: 10%;
+	        opacity: 0.7;
+	}
+	
+			#forum:hover, #forum:active{
+			        opacity: 1;
+			        z-index: 1;
+			}
 
 
-#wizard{
-        z-index: 1;
-        position: absolute;
-        width:100%;
-        top: 5%;
-        min-width: 1000px;
-        margin-top: 0px;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-}
+	#home{
+	        position: absolute;
+	        z-index: 1;
+	        top: 15%;
+	        left: 10%;
+	        opacity: 0.7;
+	}
+	
+			#home:hover, #home:active{
+			        opacity: 1;
+			        z-index: 1;
+			}
+		
+		
 
-#wizardadv{
-        z-index: 1;
-        position: absolute;
-        width:100%;
-        top: 5%;
-        min-width: 1500px;
-        margin-top: 0px;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-}
+	#question{
+		margin-bottom: -3px;
+		height: 20px;
+		width: 20px;
+		z-index:10;
+	}
+	
+	#questionAdv{
+		margin-bottom: -3px;
+		height: 20px;
+		width: 20px;
+		z-index: 10;
+	}
 
-.opacitybox{
-        z-index: 0;               
-        padding:0px;
-        margin:0px;
-        margin-top: 0px;
-        margin-right: auto;
-        padding-bottom: 100px;
-        margin-left: auto;
-        max-height: 100%;
-        width: 1000px;               
-        opacity:0.8;
-        text-align: center;
-        border:0px solid #d6d6d6;
-}
+	#showparts{
+		background: black;
+		width: 100%;
+		color: white;
+		padding-bottom: 10px;
+	
+	}
 
 
-.litentext{
-        position: relative;
-        font-size: 18px;
-        color: black;
-        text-shadow: 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c, 0 0 0.2em #fc9f3c;
-        text-align: center;
-}
+ /*Scrollista och användarinmatningsfält */
+
+	select{
+		width: 190px;
+	        height: 30px;
+	        border:solid 1px black;
+		border-radius: 15px;
+		margin: 5px;        
+		font-size: 20px;
+	        color:#727272;
+		text-align: center;
+		opacity:0.9;
+	}
+	
+	
+	input[type=text]{
+		background-color: #FFFFFF;
+		color: #979797;
+		height: 30px;
+		padding-left:10px;
+	        margin-top: 0px;
+		margin-bottom: 5px;
+		width: 250px;
+	        font-size: 20px;
+	        font-family: "Arial Black", sans-serif;
+		border-radius: 25px;		
+		text-align: center;
+		opacity: 0.9;
+		border:solid 1px black;
+	}
+	
+	
+	input[type=submit]{
+		width: 70px;
+	        height: 30px;
+		margin: 10px;
+		font-size: 20px;
+	}
+	
+	
+	input[type=reset]{
+		width: 70px;
+		height: 30px;
+		margin: 10px;
+	        font-size: 20px;   
+	}
+	
+	
+
+ /*Design för tabeller*/
+
+	table{
+	        width: 100%;
+	        color: #939393;
+	        background: black;
+	        z-index: -1;
+	        margin-top: 200px;
+		margin-bottom: 0px;
+	}
+	
+	
+	#setinfotable{
+		top: 0px;
+	        background: #fc9f3c;
+		margin-top: 0px;
+		margin-bottom: 100px;
+	}
+	
+	.opacitybox{
+	        z-index: 0;               
+	        padding:0px;
+	        margin:0px;
+	        margin-top: 0px;
+	        margin-right: auto;
+	        padding-bottom: 100px;
+	        margin-left: auto;
+	        max-height: 100%;
+	        width: 1000px;               
+	        opacity:0.8;
+	        text-align: center;
+	        border:0px solid #d6d6d6;
+	}
 
 
-#forum{
-        z-index: 1;
-        position: absolute;
-        top: 15%;
-        right: 10%;
-        background: url('forumbutton12.png');
-        opacity: 0.7;
-}
-
-#forum:hover, #forum:active{
-        opacity: 1;
-        z-index: 1;
-}
 
 
-#home{
-        position: absolute;
-        z-index: 1;
-        top: 15%;
-        left: 10%;
-        opacity: 0.7;
-}
 
-#home:hover, #home:active{
-        opacity: 1;
-        z-index: 1;
-}
-
-
-select{
-	width: 190px;
-        height: 30px;
-        border:solid 1px black;
-	border-radius: 15px;
-	margin: 5px;        
-	font-size: 20px;
-        color:#727272;
-	text-align: center;
-	opacity:0.9;
-}
-
-
-input[type=text]{
-	background-color: #FFFFFF;
-	border-color: white;
-	color: #979797;
-	height: 30px;
-	padding-left:10px;
-        margin-top: 0px;
-	margin-bottom: 5px;
-	width: 250px;
-        font-size: 20px;
-        font-family: Arial Black, sans-serif;
-	border-radius: 25px;		
-	text-align: center;
-	opacity: 0.9;
-	border:solid 1px black;
-}
-
-
-input[type=submit]{
-	width: 70px;
-        height: 30px;
-	margin: 10px;
-	font-size: 20px;
-}
-
-
-input[type=reset]{
-	width: 70px;
-	height: 30px;
-	margin: 10px;
-        font-size: 20px;   
-}
-
-
-table{
-        width: 100%;
-        color: #939393;
-        background: black;
-        z-index: -1;
-        border: solid 0px black;
-        margin-top: 200px;
-	margin-bottom: 0px;
-}
-
-
-#setinfotable{
-	top: 0px;
-        background: #fc9f3c;
-	margin-top: 0px;
-	margin-bottom: 100px;
-}
-
-
-#showparts{
-	background: black;
-	width: 100%;
-	color: white;
-	padding-bottom: 10px;
-
-}
-
-
-th{
-        font-size: 30px;
-        font-family: Verdana, sans-serif;
-        background: #3d3d3d;
-        height: 60px;
-}
-
-
-td{
-        background: black;
-        font-size: 22px;
-        font-family: Verdana, sans-serif;
-}
-
-
-.blockfun{
-        display: block;
-        height: 60px;
-        line-height: 60px;
-        overflow: hidden;
-}
-
-.blockfun:hover{
-        background-color:#bc6100;
-        color: black;
-}
-
-
-title {
-        font-size: 20px;
-        color:#727272;
-        text-align: center;
-        opacity:0.9;
-}
-
-
-.false {
-	text-decoration:none;
-	color: #939393;
-}
-
-.false:hover{
-	text-decoration:none;
-	color: #939393; 
-}
-
-
-.page{
-	text-decoration:none;
-	color: white; 
-}
-
-
-#pagenumber{
-	margin-bottom: 100px;
-	background: black;
-	border: solid 1px #939393;
-        font-size: 18px;
-}
+	 /*celler i tabellerna*/
+	
+	th{
+	        font-size: 30px;
+	        font-family: Verdana, sans-serif;
+	        background: #3d3d3d;
+	        height: 60px;
+	}
+	
+	
+	td{
+	        background: black;
+	        font-size: 22px;
+	        font-family: Verdana, sans-serif;
+	}
+	
+	
+	.blockfun{
+	        display: block;
+	        height: 60px;
+	        line-height: 60px;
+	        overflow: hidden;
+	}
+			
+			.blockfun:hover{
+			        background-color:#bc6100;
+			        color: black;
+			}
+	
+	
+	title {
+	        font-size: 20px;
+	        color:#727272;
+	        text-align: center;
+	        opacity:0.9;
+	}
+	
+	
+	
+	/*för paginering till tabellerna*/
+	
+	.false {
+		text-decoration:none;
+		color: #939393;
+	}
+	
+			.false:hover{
+				text-decoration:none;
+				color: #939393; 
+			}
+	
+	
+	.page{
+		text-decoration:none;
+		color: white; 
+	}
+	
+	
+	#pagenumber{
+		margin-bottom: 100px;
+		background: black;
+		border: solid 1px #939393;
+	        font-size: 18px;
+	}
