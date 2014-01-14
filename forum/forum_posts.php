@@ -11,7 +11,7 @@ include "header.php";
 	print("</h2></div>");
 
 	// Anslut till MySQL-server via binero
-	$connection =  mysql_connect("forum-188949.mysql.binero.se", "188949_lv47601", "hustler1993") or
+	$connection =  mysql_connect("forum-188949.mysql.binero.se", "188949_lv47601", "") or
 			die("connection failed!");
 
 	// Välj databas (egenskapad databas som ligger på egen domän)
