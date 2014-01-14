@@ -1,3 +1,5 @@
+/*style för hela forumet, där index och postsidan är inkluderad*/
+
 body
 {
 	background-color: black;
@@ -8,6 +10,7 @@ body
 	color: white;
 }
 
+/*bakgrunden*/
 #background
 {
 	z-index: -1; 
@@ -19,7 +22,7 @@ body
 	
 }
 
-
+/*div för boxen där man skapar nya trådar*/
 #threadform
 {
 	z-index: 1;
@@ -29,13 +32,14 @@ body
 	top: 0px;
 }
 
-
+/*submitknappen*/
 #submit
 {
 	margin: 10px;
 	float: left;
 }
 
+/*resetknappen*/
 #reset
 {
 	margin: 10px;
@@ -43,7 +47,7 @@ body
 }
 
 
-
+/*div för boxen där man skapar nya posts(meddelanden)*/
 #postform
 {
 	z-index: 1;
@@ -54,6 +58,7 @@ body
 	border-radius:25px;
 }
 
+/*huvudrubrik i forum*/
 #headline
 {
 	z-index: -1;
@@ -65,7 +70,7 @@ body
 	text-align: center;
 }
 
-
+/*rubrik i posts*/
 #postheadline
 {
 	background: black;
@@ -75,31 +80,33 @@ body
 }
 
 
-
+/*knappen som länkar till hemsidans huvudsida*/
 #home
 {
 	z-index: 1;
 	top: 30px;
 	float: left;
-	opacity: 0.4;
-	margin-left: 15%;
+	opacity: 0.6;
+	margin-left: 18%;
 	position: absolute;
 	width: 200px;
 
 }
 
+/*knappen som länkar till forumets huvudsida*/
 #forum
 {
 	z-index: 1;
 	top: 30px;
 	float: left;
-	opacity: 0.4;
-	margin-left: 70%;
+	opacity: 0.6;
+	margin-left: 67%;
 	position: absolute;
 	width: 200px;
 
 }
 
+/*huvudrubrik (FORUM)*/
 h1
 {
 	z-index: 0;
@@ -113,7 +120,7 @@ h1
 	text-shadow: 3px 3px #777777;
 }
 
-
+/*postrubrik*/
 h2
 {
 	z-index: 0;
@@ -126,11 +133,13 @@ h2
 
 }
 
+/*anpassar headern så att den ligger snyggt*/
 #spacing
 {
 	min-height: 180px;
 }
 
+/*inkluderar headline, länkknappar och wizard för skapande av trådar*/
 header
 {
 	top:0px;
@@ -141,10 +150,12 @@ header
 	padding: 0px;
 	position: absolute;
 	width:100%;
+	min-width: 1100px;
 	min-height: 180px;
 	background: black;
 }
 
+/*inkluderar hela tabellen i post- & trådsidan*/
 .opacitybox
 {
 	z-index: 0;
@@ -162,6 +173,7 @@ header
 	width: 60%;
 }
 
+/*innehåller inputs för trådskapare*/
 #wizard
 {
 	z-index: -1;
@@ -170,9 +182,10 @@ header
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0;
-	margin-left: 85%;
+	margin-left: 83%;
 }
 
+/*innehåller inputs för postskapare*/
 #wizard2
 {
 	z-index: 0;
@@ -183,16 +196,7 @@ header
 	padding-left: 8px;
 }
 
-
-select
-{
-   	width: 400px;
-	font-size: 30px;
-	color:#727272;
-	border-radius: 15px;
-	margin: 0px;
-}
-
+/*stil på inputen för användarnamn/skapare*/
 input[type=text]
 {
     	background-color: #ffffff;
@@ -206,6 +210,8 @@ input[type=text]
 	font-size: 15px;
 	border-radius: 18px;
 }
+
+/*stil på inputen textarea*/
 input[type=textarea]
 {
     	background-color: #ffffff;
@@ -218,8 +224,7 @@ input[type=textarea]
 	border-radius: 10px;
 }
 
-
-
+/*submit-knappen*/
 input[type=submit]
 {
     	width: 80px;
@@ -227,6 +232,7 @@ input[type=submit]
 	margin: 15px;
 }
 
+/*reset-knappen*/
 input[type=reset]
 {
  	width: 80px;
@@ -235,6 +241,7 @@ input[type=reset]
 	
 }
 
+/*stil på standard-tabell*/
 table
 {
 	z-index: 0;
@@ -248,11 +255,14 @@ table
 	margin-bottom: 0;
 	margin-left: auto;
 	border-radius:5px;
-	border: border;
-	cellpadding: 6px;
-	cellspacing: 3px;
+	border: solid 1px #593f00; 
+	cellpadding:6;
+	cellspacing:3;
+	/* border='border' cellpadding='6' cellspacing='3'*/
+
 }
 
+/*stil på översta raden (header-raden)*/
 th
 {
 	font-size: 40px;
@@ -264,6 +274,7 @@ th
 	text-shadow: 2px 2px #000000;
 }
 
+/*stil på standard rad*/
 td
 {
 	background-image: url('piggelin.png');
@@ -272,14 +283,17 @@ td
 	color: #593f00;
 	border-radius:5px;
 	margin: 0px;
+	border: solid 1px #593f00;
 }
 
+/*stil på rad i tabell för forumstrådar*/
 .subjecttd
 {
 	color: black;
 	text-align: center;
 }
 
+/*stil på ämne i trådsidan*/
 .subjectfont
 {
 	font-size: 35px;
@@ -287,6 +301,7 @@ td
 	padding: 0px;
 }
 
+/*stil på skaparnamn*/
 .creatorfont
 {
 	margin: 0px;
@@ -295,6 +310,7 @@ td
 	font-size: 15px;
 }
 
+/*stil på tabellrad där användarnamnet skrivs*/
 .usernametd
 {
 	background: #593f00;
@@ -303,6 +319,7 @@ td
 
 }
 
+/*stil på datumet*/
 .datefont
 {
 	font-size: 15px;
@@ -312,6 +329,7 @@ td
 	text-align: center;
 }
 
+/*stil på användarnamn i post.php*/
 .usernamefont
 {
 	font-size: 30px;
@@ -321,20 +339,23 @@ td
 	color: #ffdc84;
 }
 
+/*stil på meddelande i posttabellen*/
 .postfont
 {
-	margin: 0px;
+	margin: 5px;
 	padding: 0px;
 	font-size: 20px;
 	color: #593f00;
 }
 
+/*för standard länkar*/
 a
 {
 	text-decoration:none;
 	color: #593f00
 }
 
+/*style för td-länkar*/
 td a {
 	display: block;
 	height: 40px;
@@ -342,30 +363,26 @@ td a {
 	padding-left: 10px;
 }
 
+/*ändrar opacity när musen går över objektet*/
 td a:hover
 {
 	background: #ffe6a8;
 }
 
+/*ändrar opacity när musen går över objektet*/
 #home:hover, #home:active
 {
-/* background: url('homebutton.png'); */
 opacity: 1;
 z-index: 1;
 }
 
-
-#forum:hover, #home:active
+/*ändrar opacity när musen går över objektet*/
+#forum:hover, #forum:active
 {
-/* background: url('homebutton.png'); */
 opacity: 1;
 z-index: 1;
 }
 
-footer
-{
-	opacity: 0.8;
-}
 
 /*animations*/
 #canvas
@@ -374,6 +391,7 @@ footer
 	
 }
 
+/*bollen som följer musen*/
 #follower
 {
 	position: absolute;
